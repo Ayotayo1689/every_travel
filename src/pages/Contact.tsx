@@ -1,0 +1,42 @@
+import Container from "@/components/Container";
+
+import ContactImg from "../assets/contactImg.jpg";
+
+import ContactSection from "@/components/ContactComp";
+import NewsletterBanner from "@/components/NewsLetterBanner";
+
+const Contact = () => {
+  return (
+    <div>
+      <div
+        data-aos="fade-right"
+        className="relative min-h-[50dvh] w-full flex flex-col items-center justify-center pb-8"
+        style={{
+          backgroundImage: `url('${ContactImg}')`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          // backgr
+        }}
+      >
+        <div className="absolute inset-0 bg-[#032A3266]" />
+
+        <div className="relative z-50 text-center px-4 mx-auto mb-8">
+          <h1 className="text-[60px]  flex justify-center items-center gap-3 font-[700] font-poppins text-white">
+            Contact Us — We’re Here to Help!
+          </h1>
+        </div>
+      </div>
+
+      <div className="w-full">
+        <Container>
+          <ContactSection />
+        </Container>
+        <Container>
+          <NewsletterBanner />
+        </Container>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
