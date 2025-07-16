@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, ChevronDown, X } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import NavFb from "../assets/Nav-FB.svg";
 import NavX from "../assets/Nav-x.svg";
 import NavLinkedin from "../assets/Nav-Linkedin.svg";
@@ -13,8 +13,6 @@ import AuthModal from "./AuthModal";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal, openModal } from "@/store/features/modalSlice";
 import { RootState } from "@/store/store";
-import { Button } from "./ui/button";
-import { HanburgerIcon } from "@/assets/icons/Icons";
 
 interface NavbarProps {
   isLoggedIn?: boolean;
@@ -22,13 +20,12 @@ interface NavbarProps {
   userName?: string;
 }
 
-export default function Navbar({
+export default function DashboardNavbar({
   isLoggedIn = false,
   ShowLogo = false,
   userName = "Jane",
 }: NavbarProps) {
   const dispatch = useDispatch();
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const [currency] = useState("NGN");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -45,7 +42,7 @@ export default function Navbar({
     "relative w-fit text-[16px] text-gray-800 hover:text-yellow-500 transition-colors duration-300 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 hover:after:w-full";
   return (
     <div className="w-full sticky top-0 z-50">
-      <div className="w-full hidden md:block border-b bg-white py-2">
+      <div className="w-full border-b bg-white py-2">
         <div className="container py-2 px-[6%] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-[16px] text-gray-600">Follow On:</span>
@@ -161,7 +158,7 @@ export default function Navbar({
       </div>
       {!ShowLogo && (
         <div className="w-full ssticky top-4 bg-[#EFF0F0] ">
-          <div className="container py-1 px-4 md:py-2 md:px-[6%] mx-auto flex items-center justify-between ">
+          <div className="container py-2 px-[6%] mx-auto flex items-center justify-between ">
             <Link to="/" className="flex items-center gap-2">
               <img
                 src={Logo || "/placeholder.svg"}
@@ -169,94 +166,6 @@ export default function Navbar({
                 className="h-full w-full object-contain"
               />
             </Link>
-
-            <Button
-  className="block w-fit h-fit md:hidden"
-  variant="ghost"
-  onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
->
-  {
-    !isMobileNavOpen ?  <HanburgerIcon /> : <X/>
-  }
- 
-</Button>
-
-
-
-
-            {isMobileNavOpen && (
-  <div className="md:hidden h-[100dvh] w-full px-4 py-4 fixed left-0 top-[70px] bg-white shadow-md space-y-4">
-    <ul className="space-y-4">
-      <li>
-        <Link to="/hotels" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Hotels
-        </Link>
-      </li>
-      <li>
-        <Link to="/airport-rides" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Airport Rides
-        </Link>
-      </li>
-      <li>
-        <Link to="/car-hire" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Car Hire
-        </Link>
-      </li>
-      <li>
-        <Link to="/corporate-travel" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Corporate Travel
-        </Link>
-      </li>
-      <li>
-        <Link to="/contact" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Contact
-        </Link>
-      </li>
-    </ul>
-
-    <div className="flex flex-col gap-4">
-      {isLoggedIn ? (
-        <div className="flex flex-col gap-2">
-          <div className="text-gray-700">Hi, {userName}</div>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            My Profile
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            My Bookings
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            Settings
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            Logout
-          </Link>
-        </div>
-      ) : (
-        <div className="flex flex-col gap-2">
-          <button
-            className="rounded-full border border-[#076476] bg-[#E6F0F1] px-5 py-2.5 text-[#076476] font-[700]"
-            onClick={() => {
-              dispatch(openModal({ type: "login" }));
-              setIsMobileNavOpen(false);
-            }}
-          >
-            Login
-          </button>
-          <button
-            className="rounded-full font-[700] bg-[#076476] px-5 py-2.5 text-white"
-            onClick={() => {
-              dispatch(openModal({ type: "signup" }));
-              setIsMobileNavOpen(false);
-            }}
-          >
-            Create Account
-          </button>
-        </div>
-      )}
-    </div>
-  </div>
-)}
-
 
             <nav className="hidden text-[16px] gap-8 md:flex">
               <ul className="flex items-center gap-8">

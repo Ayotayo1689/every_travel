@@ -108,7 +108,6 @@ const Home = () => {
       <TravelBooking />
 
       <div className="w-full">
-        {/* Top bar */}
         <Container>
           <TravelOffers />
         </Container>
