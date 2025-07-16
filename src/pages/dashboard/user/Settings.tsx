@@ -1,47 +1,40 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 export default function Settings() {
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+      <div className="p-6 bg-white rounded-2xl">
+        <h1 className="text-[20px] font-bold text-gray-900">Settings</h1>
       </div>
 
-      <div className="space-y-6">
-        {/* Security Settings */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Security Settings</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Button variant="ghost" className="w-full justify-between p-4 h-auto">
-              <span>Change Password</span>
-              <ChevronRight className="w-4 h-4" />
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="space-y-6 bg-white rounded-2xl p-6 h-[100%]">
+        <div className=" mb-16">
+          <div className="text-lg mb-4" >Security Settings</div>
+
+          <Button
+            variant="outline"
+            className="w-full max-w-[500px] justify-between p-4 h-auto"
+          >
+            <span>Change Password</span>
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+        </div>
+
+        <div className=" mb-16">
+          <div className="text-lg mb-4" >Account Management</div>
+
+          <Button
+            variant="outline"
+            className="w-full max-w-[500px] justify-between p-4 h-auto"
+          >
+            <span className="text-[#86251E]">Delete Account</span>
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+        </div>
 
         {/* Account Management */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Account Management</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Button
-              variant="ghost"
-              className="w-full justify-between p-4 h-auto text-red-600 hover:text-red-700 hover:bg-red-50"
-            >
-              <div className="text-left">
-                <div className="font-medium">Delete Account</div>
-                <div className="text-sm text-gray-500">This will permanently close your account</div>
-              </div>
-              <ChevronRight className="w-4 h-4" />
-            </Button>
-          </CardContent>
-        </Card>
       </div>
     </div>
-  )
+  );
 }

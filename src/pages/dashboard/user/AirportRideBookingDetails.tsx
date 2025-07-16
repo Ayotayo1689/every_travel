@@ -1,25 +1,9 @@
+import { CabIcon, LoggageIcon } from "@/assets/icons/Icons";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { CalendarDays, User, Mail, Phone, Globe, MapPin } from "lucide-react";
+import { MapPin, UserIcon } from "lucide-react";
 
-export default function BookingDetails() {
-  const getStars = (rating: number) => {
-    // Convert rating to stars (assuming 10 is 5 stars)
-    const stars = Math.round((rating / 10) * 5);
-    return Array(5)
-      .fill(0)
-      .map((_, i) => (
-        <span
-          key={i}
-          className={`text-2xl ${
-            i < stars ? "text-yellow-400" : "text-gray-300"
-          }`}
-        >
-          ★
-        </span>
-      ));
-  };
-
+export default function AirportRideBookingDetails() {
   return (
     <div className="space-y-6">
       <div className="p-6 bg-white rounded-2xl">
@@ -32,26 +16,26 @@ export default function BookingDetails() {
           <div className="col-span-1  flex flex-col  gap-4 ">
             <Card className=" p-0 h-fit border-none shadow-none">
               <CardContent className=" p-4 space-y-2">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d"
-                  alt="Hotel room"
-                  className="rounded-lg w-full  object-cover aspect-square max-h-[200px] "
-                />
+                <CabIcon />
                 <div>
-                  <div className="flex mb-2">{getStars(10)}</div>
-
                   <p className="font-[700] text-[20px]">Grand Crest Hotel</p>
-                  <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    45, Raul Road, Victoria Island, Lagos
+                  <div className="flex items-center mt-2 gap-2 text-sm text-muted-foreground">
+                    Perfect for: Small groups or families that need a bit more
+                    comfort.
                   </div>
-                  <p className="text-sm mb-3  mt-3">
-                    <span className=" font-[700] text-black">8.3/10  Very Good </span> –
-                   (45 reviews)
-                  </p>
-                  <a href="#" className="text-[16px]  font-[700] text-[#076476] hover:underline">
-                    View more details
-                  </a>
+
+                  <div className="flex mt-4 gap-8 mb-6">
+                    <div className="flex items-center gap-2">
+                      <UserIcon color="grey" />
+
+                      <div className="text-[15px]">4 Passengers</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <LoggageIcon />
+
+                      <div className="text-[15px]">4 Passengers</div>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -59,19 +43,68 @@ export default function BookingDetails() {
             {/* Booked Rooms */}
             <Card className=" p-0  h-fit border-none shadow-none">
               <CardContent className="p-4">
-                <p className="font-[700] text-[16px] mb-2">Booked Rooms (2)</p>
-                <ul className="list-none   list-inside text-[16px] text-[#1D1F1F] space-y-1">
-                  <li className="mb-3">1 Classic room</li>
-                  <li className="mb-3">1 Standard room</li>
-                </ul>
+                <p className="font-[700] text-[16px] mb-2">Your Trip</p>
+                <div className=" mx-auto mt-10">
+                  <div className="relative pl-6 border-l-1 border-gray-200">
+                    {/* Pickup Location */}
+                    <div className="mb-10 relative">
+                      <div className="absolute -left-8.5 top-1 w-5 h-5 bg-teal-600 rounded-full border-4 border-[#fff] shadow"></div>
+                      <div className="bg-gray-100 p-4 rounded-lg ">
+                        <p className="text-sm text-gray-500 mb-2">
+                          Pickup location
+                        </p>
+                        <p className="text-base text-gray-800">
+                          Murtala Muhammed International Airport, Ikeja, NG
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Drop-off Location */}
+                    <div className="relative">
+                      <div className="absolute -left-8.5 top-1 w-5 h-5 bg-teal-600 rounded-full border-4 border-[#fff] shadow"></div>
+                      <div className="bg-gray-100 p-4 rounded-lg ">
+                        <p className="text-sm text-gray-500 mb-2">
+                          Drop-off location
+                        </p>
+                        <p className="text-base text-gray-800">
+                          Oseni Street, Lagos, NG 123456
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             {/* Special Requests */}
             <Card className=" p-0  h-fit border-none shadow-none">
               <CardContent className="p-4">
-                <p className="font-[700] mb-4 text-[16px] ">Special Requests</p>
-                <p className="text-sm  mb-3 text-muted-foreground">Nil</p>
+                <p className="font-[700] mb-4 text-[16px] ">
+                  Driver Information
+                </p>
+                <div className="flex flex-col gap-2  py-4">
+                  <p className="text-[16px] text-[#1D1F1F] ">Name</p>
+                  <p className="text-[18px] font-[600] text-[#1D1F1F]">
+                    Michael Okafor
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2  py-4">
+                  <p className="text-[16px] text-[#1D1F1F] ">
+                    Contact information
+                  </p>
+                  <p className="text-[18px] font-[600] text-[#1D1F1F]">
+                    +234 8098765432
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2  py-4">
+                  <p className="text-[16px] text-[#1D1F1F] ">
+                    Message to driver
+                  </p>
+                  <p className="text-[18px] font-[600] text-[#1D1F1F]">
+                    Nil
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -100,7 +133,7 @@ export default function BookingDetails() {
                   </div>
 
                   <div className="flex justify-between border-b py-5 border-[#eee]">
-                    <p className="text-[16px] text-[#1D1F1F] ">Check-in Date</p>
+                    <p className="text-[16px] text-[#1D1F1F] ">Pickup date</p>
                     <p className="text-right text-[18px] font-[600] text-[#1D1F1F]">
                       Tue 11 Mar 2025
                     </p>
@@ -108,19 +141,14 @@ export default function BookingDetails() {
 
                   <div className="flex justify-between border-b py-5 border-[#eee]">
                     <p className="text-[16px] text-[#1D1F1F] ">
-                      Check-out Date
+                    Time
                     </p>
                     <p className="text-right text-[18px] font-[600] text-[#1D1F1F]">
-                      Wed 12 Mar 2025
+                    10:30 am
                     </p>
                   </div>
 
-                  <div className="flex justify-between border-b py-5 border-[#eee]">
-                    <p className="text-[16px] text-[#1D1F1F] ">Guests</p>
-                    <p className="text-right text-[18px] font-[600] text-[#1D1F1F]">
-                      2 Adults
-                    </p>
-                  </div>
+
 
                   <div className="flex justify-between border-b py-5 border-[#eee]">
                     <p className="text-[16px] text-[#1D1F1F] ">
@@ -153,23 +181,33 @@ export default function BookingDetails() {
             </Card>
             <Card className=" p-0 border-none shadow-none">
               <CardContent className="p-4">
-                <p className="font-semibold mb-4">Guest Information</p>
+                <p className="font-semibold mb-4">Passenger Information</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2 justify-between p-2">
                     <div className="text-[16px] text-[#1D1F1F]">Name</div>
-                    <span className="text-[18px] font-[600] text-[#1D1F1F]">Jane Doe</span>
+                    <span className="text-[18px] font-[600] text-[#1D1F1F]">
+                      Jane Doe
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 justify-between p-2">
                     <div className="text-[16px] text-[#1D1F1F]">Email</div>
-                    <span className="text-[18px] font-[600] text-[#1D1F1F]">janedoe@gmail.com</span>
+                    <span className="text-[18px] font-[600] text-[#1D1F1F]">
+                      janedoe@gmail.com
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 justify-between p-2">
-                    <div className="text-[16px] text-[#1D1F1F]">Phone Number</div>
-                    <span className="text-[18px] font-[600] text-[#1D1F1F]">+234 8012345678</span>
+                    <div className="text-[16px] text-[#1D1F1F]">
+                      Phone Number
+                    </div>
+                    <span className="text-[18px] font-[600] text-[#1D1F1F]">
+                      +234 8012345678
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 justify-between p-2">
                     <div className="text-[16px] text-[#1D1F1F]">Country</div>
-                    <span className="text-[18px] font-[600] text-[#1D1F1F]">Nigeria</span>
+                    <span className="text-[18px] font-[600] text-[#1D1F1F]">
+                      Nigeria
+                    </span>
                   </div>
                 </div>
               </CardContent>

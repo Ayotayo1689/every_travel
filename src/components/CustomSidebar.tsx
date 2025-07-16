@@ -101,12 +101,12 @@ export default function CustomSidebar() {
                 />
               </button>
               {openSubmenu === item.title && (
-                <ul className="ml-8 mt-1 space-y-1">
+                <ul className="ml-8 mt-1  space-y-1">
                   {item.items.map((subItem) => (
                     <li key={subItem.title}>
                       <Link
                         to={subItem.url}
-                        className={`block px-3 font-[400] py-1 rounded-md text-sm hover:bg-[#305259] ${
+                        className={`block px-3 font-[400] py-3 rounded-md text-sm hover:bg-[#305259] ${
                           location.pathname === subItem.url
                             ? "bg-[#305259] text-white"
                             : "text-slate-300"

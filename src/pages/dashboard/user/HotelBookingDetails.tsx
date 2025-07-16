@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { CalendarDays, User, Mail, Phone, Globe, MapPin } from "lucide-react";
 
-export default function BookingDetails() {
+export default function HotelBookingDetails() {
   const getStars = (rating: number) => {
     // Convert rating to stars (assuming 10 is 5 stars)
     const stars = Math.round((rating / 10) * 5);

@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Calendar, Users, Bed } from "lucide-react";
-import { HotelIcon } from "@/assets/icons/Icons";
+import { HotelIcon, SortIcon } from "@/assets/icons/Icons";
 
 const bookings = [
   {
@@ -74,14 +74,16 @@ export default function Hotels() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">
+      <div className="flex p-6 bg-white rounded-2xl items-center justify-between">
+        <h1 className="text-[20px] font-bold text-gray-900">
           Bookings History - Hotels
         </h1>
         <Select defaultValue="newest">
-          <SelectTrigger className="w-48">
-            <SelectValue placeholder="Sort by" />
-          </SelectTrigger>
+          <SelectTrigger className="w-fit min-w-[180px] rounded-3xl">
+                     <div className="flex items-center gap-2">
+                       <SortIcon /> <SelectValue placeholder="Sort by" />
+                     </div>
+                   </SelectTrigger>
           <SelectContent>
             <SelectItem value="newest">Sort by: Newest</SelectItem>
             <SelectItem value="oldest">Sort by: Oldest</SelectItem>
@@ -124,16 +126,16 @@ export default function Hotels() {
             <Card className="shadow-none" key={booking.id}>
               <CardContent>
                 <div className="flex  items-start justify-between">
-                  <div className="space-y-3  w-full">
+                  <div className="space-y-1  w-full">
                     <div className="flex justify-between items-center gap-2">
-                      <h3 className="font-semibold text-lg flex items-center gap-2"> <HotelIcon/> {booking.hotel}</h3>
+                      <h3 className="font-[700] text-[#1D1F1F] text-lg flex items-center gap-2"> <HotelIcon/> {booking.hotel}</h3>
                       <Badge className={getStatusColor(booking.status)}>
                         {booking.status}
                       </Badge>
                     </div>
-                    <p className="text-gray-600">{booking.location}</p>
+                    <p className="text-[#5D6465] mb-6">{booking.location}</p>
 
-                    <div className="flex items-center gap-6 text-sm text-gray-600">
+                    <div className="flex text-[#1D1F1F] mb-3 items-center gap-6 text-sm ">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         {booking.dates}

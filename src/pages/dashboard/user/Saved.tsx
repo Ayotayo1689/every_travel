@@ -11,7 +11,7 @@ const savedHotels = [
     rating: 4.8,
     reviews: 45,
     price: 135000,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://images.unsplash.com/photo-1752440093057-1c188e7137e9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: true,
     discount: null,
   },
@@ -22,7 +22,7 @@ const savedHotels = [
     rating: 4.7,
     reviews: 45,
     price: 245000,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://images.unsplash.com/photo-1752440093057-1c188e7137e9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: false,
     discount: "5% OFF",
   },
@@ -33,7 +33,7 @@ const savedHotels = [
     rating: 4.8,
     reviews: 45,
     price: 105000,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://images.unsplash.com/photo-1752440093057-1c188e7137e9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: false,
     discount: "30% OFF",
   },
@@ -44,7 +44,7 @@ const savedHotels = [
     rating: 4.1,
     reviews: 45,
     price: 135000,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://images.unsplash.com/photo-1752440093057-1c188e7137e9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: false,
     discount: null,
   },
@@ -53,11 +53,11 @@ const savedHotels = [
 export default function Saved() {
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Saved Lists</h1>
+      <div className="p-6 bg-white rounded-2xl">
+        <h1 className="text-[20px] font-bold text-gray-900">Saved Lists</h1>
       </div>
 
-      <div className="flex flex-wrap gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 flex-wrap p-6 bg-white rounded-lg gap-6">
         {savedHotels.map((hotel) => (
           // <Card key={hotel.id} className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
           //   <div className="relative">

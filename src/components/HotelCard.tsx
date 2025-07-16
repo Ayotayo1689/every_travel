@@ -57,7 +57,7 @@ export default function HotelCard({
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 overflow-hidden bg-white  hover:shadow-md transition-shadow">
+    <div className="rounded-2xl  border border-gray-200 overflow-hidden bg-white  hover:shadow-md transition-shadow">
       <div className=" p-2 ">
         <div className="w-full relative min-w-[300px] h-[250px]      rounded-xl overflow-clip  ">
           <img

@@ -1,19 +1,30 @@
-import { Route } from "react-router-dom"
-import { lazy } from "react"
-import UserDashboardLayout from "@/layouts/UserDashboardLayout"
+import { Route } from "react-router-dom";
+import { lazy } from "react";
+import UserDashboardLayout from "@/layouts/UserDashboardLayout";
 
 // User Dashboard pages
-const UserProfile = lazy(() => import("@/pages/dashboard/user/Profile"))
-const UserWallet = lazy(() => import("@/pages/dashboard/user/Wallet"))
-const UserBookings = lazy(() => import("@/pages/dashboard/user/Bookings"))
-const UserHotels = lazy(() => import("@/pages/dashboard/user/Hotels"))
-const UserAirportRides = lazy(() => import("@/pages/dashboard/user/AirportRides"))
-const UserCarHires = lazy(() => import("@/pages/dashboard/user/CarHires"))
-const UserSaved = lazy(() => import("@/pages/dashboard/user/Saved"))
-const UserOffers = lazy(() => import("@/pages/dashboard/user/Offers"))
-const UserSettings = lazy(() => import("@/pages/dashboard/user/Settings"))
-const UserHelp = lazy(() => import("@/pages/dashboard/user/Help"))
-const BookingDetails = lazy(() => import("@/pages/dashboard/user/BookingDetails"))
+const UserProfile = lazy(() => import("@/pages/dashboard/user/Profile"));
+const UserWallet = lazy(() => import("@/pages/dashboard/user/Wallet"));
+const UserBookings = lazy(() => import("@/pages/dashboard/user/Bookings"));
+const UserHotels = lazy(() => import("@/pages/dashboard/user/Hotels"));
+const UserAirportRides = lazy(
+  () => import("@/pages/dashboard/user/AirportRides")
+);
+const UserCarHires = lazy(() => import("@/pages/dashboard/user/CarHires"));
+const UserSaved = lazy(() => import("@/pages/dashboard/user/Saved"));
+const UserOffers = lazy(() => import("@/pages/dashboard/user/Offers"));
+const UserSettings = lazy(() => import("@/pages/dashboard/user/Settings"));
+const UserHelp = lazy(() => import("@/pages/dashboard/user/Help"));
+const BookingDetails = lazy(
+  () => import("@/pages/dashboard/user/BookingDetails")
+);
+
+const AirportRideBookingDetails = lazy(
+  () => import("@/pages/dashboard/user/AirportRideBookingDetails")
+);
+const HotelBookingDetails = lazy(
+  () => import("@/pages/dashboard/user/HotelBookingDetails")
+);
 
 export const UserDashboardRoutes = [
   <Route
@@ -72,7 +83,25 @@ export const UserDashboardRoutes = [
   />,
   <Route
     key="user-booking-details"
-    path="/dashboard/user/bookings/:id"
+    path="/dashboard/user/bookings/hotels/:id"
+    element={
+      <UserDashboardLayout>
+        <HotelBookingDetails />
+      </UserDashboardLayout>
+    }
+  />,
+  <Route
+    key="user-booking-details"
+    path="/dashboard/user/bookings/airport-rides/:id"
+    element={
+      <UserDashboardLayout>
+        <AirportRideBookingDetails />
+      </UserDashboardLayout>
+    }
+  />,
+  <Route
+    key="user-booking-details"
+    path="/dashboard/user/bookings/car-hires/:id"
     element={
       <UserDashboardLayout>
         <BookingDetails />
@@ -115,4 +144,4 @@ export const UserDashboardRoutes = [
       </UserDashboardLayout>
     }
   />,
-]
+];
