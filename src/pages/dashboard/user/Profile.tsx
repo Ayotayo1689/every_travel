@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowBackIcon } from "@/assets/icons/Icons";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function Profile() {
   const [edit, setEdit] = useState<any>(null);
@@ -111,7 +112,9 @@ export default function Profile() {
 
               {edit === "basic" ? (
                 <div className=" max-w-[500px] mt-6 m-auto">
-                  <h1 className="mb-2 font-[700] text-[20px]">Edit basic Information</h1>
+                  <h1 className="mb-2 font-[700] text-[20px]">
+                    Edit basic Information
+                  </h1>
 
                   <p className="text-[16px] mb-6">
                     Make sure this information matches your travel ID, like your
@@ -120,7 +123,7 @@ export default function Profile() {
                   <form className="space-y-4">
                     <div>
                       <Label>First name *</Label>
-                      <Input defaultValue="Jane" />
+                      <Input  defaultValue="Jane" />
                     </div>
                     <div>
                       <Label>Last name *</Label>
@@ -132,7 +135,7 @@ export default function Profile() {
                     </div>
                     <div>
                       <Label>Gender</Label>
-                      {/* <RadioGroup defaultValue="none">
+                      <RadioGroup defaultValue="none">
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="male" id="male" />
                           <Label htmlFor="male">Male</Label>
@@ -145,7 +148,7 @@ export default function Profile() {
                           <RadioGroupItem value="none" id="none" />
                           <Label htmlFor="none">I prefer not to say</Label>
                         </div>
-                      </RadioGroup> */}
+                      </RadioGroup>
                     </div>
                     <div className="flex gap-2">
                       <Button
@@ -163,12 +166,14 @@ export default function Profile() {
               ) : (
                 <div className=" max-w-[500px] mt-6 m-auto">
                   <form className="space-y-4">
-                  <h1 className="mb-2 font-[700] text-[20px]">Edit contact Information</h1>
+                    <h1 className="mb-2 font-[700] text-[20px]">
+                      Edit contact Information
+                    </h1>
 
-<p className="text-[16px] mb-6">
-  Make sure this information matches your travel ID, like your
-  passport or license.
-</p>
+                    <p className="text-[16px] mb-6">
+                      Make sure this information matches your travel ID, like
+                      your passport or license.
+                    </p>
                     <div>
                       <Label>Email *</Label>
                       <Input type="email" defaultValue="janedoe@gmail.com" />
