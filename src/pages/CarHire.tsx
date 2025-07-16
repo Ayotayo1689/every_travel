@@ -12,7 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -212,8 +212,9 @@ export default function CarHire() {
                             )}
                           >
                             {pickupDate
-                              ? format(pickupDate, "EEE, dd MMM yyyy")
-                              : "Select date"}
+                              ? `${pickupDate}`
+                              : // ? format(pickupDate, "EEE, dd MMM yyyy")
+                                "Select date"}
                             <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                           </button>
                         </PopoverTrigger>
@@ -300,8 +301,9 @@ export default function CarHire() {
                           )}
                         >
                           {pickupDate
-                            ? format(pickupDate, "EEE, dd MMM yyyy")
-                            : "Select date"}
+                            ? `${pickupDate}`
+                            : // ? format(pickupDate, "EEE, dd MMM yyyy")
+                              "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>
                       </PopoverTrigger>
@@ -347,8 +349,9 @@ export default function CarHire() {
                           )}
                         >
                           {dropoffDate
-                            ? format(dropoffDate, "EEE, dd MMM yyyy")
-                            : "Select date"}
+                            ? `${dropoffDate}`
+                            : // ? format(dropoffDate, "EEE, dd MMM yyyy")
+                              "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>
                       </PopoverTrigger>
@@ -395,7 +398,7 @@ export default function CarHire() {
 
       {/* Booking card */}
       <Container>
-        <div  data-aos="fade-right" className=" w-full  pt-40 mx-auto ">
+        <div data-aos="fade-right" className=" w-full  pt-40 mx-auto ">
           <div
             style={{
               backgroundImage: `url('${PlaneSvg}')`,
@@ -448,7 +451,7 @@ export default function CarHire() {
       </Container>
       <div className="">
         <Container>
-        <FeaturedSuppliers/>
+          <FeaturedSuppliers />
         </Container>
       </div>
     </div>

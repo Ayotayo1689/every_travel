@@ -12,7 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -210,8 +210,8 @@ export default function TransportationBooking() {
                               !pickupDate && "text-gray-500"
                             )}
                           >
-                            {pickupDate
-                              ? format(pickupDate, "EEE, dd MMM yyyy")
+                            {pickupDate ? `${pickupDate}`
+                              // ? format(pickupDate, "EEE, dd MMM yyyy")
                               : "Select date"}
                             <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                           </button>
@@ -298,8 +298,8 @@ export default function TransportationBooking() {
                             !pickupDate && "text-gray-500"
                           )}
                         >
-                          {pickupDate
-                            ? format(pickupDate, "EEE, dd MMM yyyy")
+                          {pickupDate ? `${pickupDate}`
+                            // ? format(pickupDate, "EEE, dd MMM yyyy")
                             : "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>
@@ -345,8 +345,8 @@ export default function TransportationBooking() {
                             !dropoffDate && "text-gray-500"
                           )}
                         >
-                          {dropoffDate
-                            ? format(dropoffDate, "EEE, dd MMM yyyy")
+                          {dropoffDate ?`${dropoffDate}`
+                            // ? format(dropoffDate, "EEE, dd MMM yyyy")
                             : "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>

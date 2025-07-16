@@ -16,11 +16,13 @@ import { RootState } from "@/store/store";
 
 interface NavbarProps {
   isLoggedIn?: boolean;
+  ShowLogo?: boolean;
   userName?: string;
 }
 
 export default function Navbar({
   isLoggedIn = false,
+  ShowLogo = false,
   userName = "Jane",
 }: NavbarProps) {
   const dispatch = useDispatch();
@@ -28,8 +30,9 @@ export default function Navbar({
   const [currency] = useState("NGN");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const { isModalOpen, modalType } = useSelector((state: RootState) => state.modal)
-
+  const { isModalOpen, modalType } = useSelector(
+    (state: RootState) => state.modal
+  );
 
   const closeModalFunc = () => {
     dispatch(closeModal());
@@ -153,54 +156,54 @@ export default function Navbar({
           </div>
         </div>
       </div>
+      {!ShowLogo && (
+        <div className="w-full ssticky top-4 bg-[#EFF0F0] ">
+          <div className="container py-2 px-[6%] mx-auto flex items-center justify-between ">
+            <Link to="/" className="flex items-center gap-2">
+              <img
+                src={Logo || "/placeholder.svg"}
+                alt="Every Travell Logo"
+                className="h-full w-full object-contain"
+              />
+            </Link>
 
-      <div className="w-full ssticky top-4 bg-[#EFF0F0] ">
-        <div className="container py-2 px-[6%] mx-auto flex items-center justify-between ">
-          <Link to="/" className="flex items-center gap-2">
-            <img
-              src={Logo || "/placeholder.svg"}
-              alt="Every Travell Logo"
-              className="h-full w-full object-contain"
-            />
-          </Link>
-
-          <nav className="hidden text-[16px] gap-8 md:flex">
-            <ul className="flex items-center gap-8">
-              <li>
-                <Link to="/hotels" className={linkClass}>
-                  Hotels
-                </Link>
-              </li>
-              <li>
-                <Link to="/airport-rides" className={linkClass}>
-                  Airport Rides
-                </Link>
-              </li>
-              <li>
-                <Link to="/car-hire" className={linkClass}>
-                  Car Hire
-                </Link>
-              </li>
-              <li>
-                <Link to="/corporate-travel" className={linkClass}>
-                  Corporate Travel
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={linkClass}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-            <button className="rounded-full bg-white p-2 shadow-sm hover:bg-gray-50">
-              <Search className="h-5 w-5 text-gray-700" />
-              <span className="sr-only">Search</span>
-            </button>
-          </nav>
+            <nav className="hidden text-[16px] gap-8 md:flex">
+              <ul className="flex items-center gap-8">
+                <li>
+                  <Link to="/hotels" className={linkClass}>
+                    Hotels
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/airport-rides" className={linkClass}>
+                    Airport Rides
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/car-hire" className={linkClass}>
+                    Car Hire
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/corporate-travel" className={linkClass}>
+                    Corporate Travel
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={linkClass}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+              <button className="rounded-full bg-white p-2 shadow-sm hover:bg-gray-50">
+                <Search className="h-5 w-5 text-gray-700" />
+                <span className="sr-only">Search</span>
+              </button>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
 
-     
       <AuthModal
         isOpen={isModalOpen}
         onClose={closeModalFunc}

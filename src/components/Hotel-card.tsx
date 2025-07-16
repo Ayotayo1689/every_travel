@@ -43,16 +43,16 @@ export default function HotelCard({ hotel }: HotelCardProps) {
       <div className="flex flex-col md:flex-row">
         <div className="relative md:w-1/3">
           <img
-            src={hotel.image || "/placeholder.svg"}
-            alt={hotel.name}
+            src={hotel?.image || "/placeholder.svg"}
+            alt={hotel?.name}
             className="w-[320px] rounded-lg h-[240px] object-cover"
           />
-          {hotel.discount && (
+          {hotel?.discount && (
             <Badge className="absolute top-2 right-2 p-2 bg-[#076476]">
-              {hotel.discount}% Off
+              {hotel?.discount}% Off
             </Badge>
           )}
-          {hotel.featured && (
+          {hotel?.featured && (
             <Badge className="absolute top-2 left-2 p-2 bg-amber-500">
               Featured
             </Badge>
@@ -74,8 +74,8 @@ export default function HotelCard({ hotel }: HotelCardProps) {
         <div className="flex-1  px-6 flex flex-col justify-between py-4">
           <div className="flex flex-col md:flex-row justify-between">
             <div>
-              <h2 className="text-[20px] mb-2 font-[700]">{hotel.name}</h2>
-              <p className="text-[16px] mb-2 text-muted-foreground">{hotel.location}</p>
+              <h2 className="text-[20px] mb-2 font-[700]">{hotel?.name}</h2>
+              <p className="text-[16px] mb-2 text-muted-foreground">{hotel?.location}</p>
 
               <div className="flex items-center mt-1">
                 {Array(5)
@@ -84,7 +84,7 @@ export default function HotelCard({ hotel }: HotelCardProps) {
                     <svg
                       key={i}
                       className={`w-[20px] h-[20px] ${
-                        i < Math.floor(hotel.rating)
+                        i < Math.floor(hotel?.rating)
                           ? "text-yellow-400"
                           : "text-gray-300"
                       } fill-current`}
@@ -101,10 +101,10 @@ export default function HotelCard({ hotel }: HotelCardProps) {
                   variant="secondary"
                   className=" bg-amber-100 text-amber-800 hover:bg-amber-100"
                 >
-                  {hotel.rating.toFixed(1)}
+                  {hotel?.rating.toFixed(1)}
                 </Badge>
                 <span className="text-[14px] font-[500] text-[#272A2A]  ml-2">
-                  Very Good · {hotel.reviews} reviews
+                  Very Good · {hotel?.reviews} reviews
                 </span>
               </div>
 
@@ -116,7 +116,7 @@ export default function HotelCard({ hotel }: HotelCardProps) {
             <div className="mt-4 md:mt-0 text-right">
               <div className="text-sm">From</div>
               <div className="text-xl font-bold">
-                ₦{hotel.price.toLocaleString()}
+                ₦{hotel?.price.toLocaleString()}
               </div>
               <div className="text-sm text-muted-foreground">/night</div>
             </div>
@@ -127,7 +127,7 @@ export default function HotelCard({ hotel }: HotelCardProps) {
           <div className="">
                 <p className="text-sm font-medium mb-1">Key facilities</p>
                 <div className="flex flex-wrap gap-4">
-                  {hotel.facilities.map((facility) => (
+                  {hotel?.facilities.map((facility) => (
                     <div
                       key={facility}
                       className="flex items-center gap-1 text-sm text-muted-foreground"

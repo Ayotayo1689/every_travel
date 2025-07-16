@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import MapImg from "../assets/mapImg.svg";
 import {
   BarIcon,
@@ -688,7 +688,7 @@ export default function HotelDetails() {
                   <span className="ml-2">Bar</span>
                 </li>
                 <li className="flex items-center">
-                  <GymIcon/>
+                  <GymIcon />
                   <span className="ml-2">Gym and fitness center</span>
                 </li>
                 <li className="flex items-center">
@@ -700,19 +700,19 @@ export default function HotelDetails() {
                   <span className="ml-2">Pool</span>
                 </li>
                 <li className="flex items-center">
-                  <FoodIcon/>
+                  <FoodIcon />
                   <span className="ml-2">Breakfast</span>
                 </li>
                 <li className="flex items-center">
-                  <ShottleIcon/>
+                  <ShottleIcon />
                   <span className="ml-2">Airport Shuttle</span>
                 </li>
                 <li className="flex items-center">
-                  <SpaIcon/>
+                  <SpaIcon />
                   <span className="ml-2">Spa</span>
                 </li>
                 <li className="flex items-center">
-                  <Drycleancon/>
+                  <Drycleancon />
                   <span className="ml-2">Dry cleaning</span>
                 </li>
               </ul>
@@ -769,8 +769,9 @@ export default function HotelDetails() {
                     <PopoverTrigger asChild>
                       <button className="w-full p-2 pr-8 border rounded-md text-left relative bg-white">
                         {checkInDate
-                          ? format(checkInDate, "EEE, dd MMM yyyy")
-                          : "Select date"}
+                          ? `${checkInDate}`
+                          : // ? format(checkInDate, "EEE, dd MMM yyyy")
+                            "Select date"}
                         <Calendar className="absolute right-2 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                       </button>
                     </PopoverTrigger>
@@ -793,8 +794,9 @@ export default function HotelDetails() {
                     <PopoverTrigger asChild>
                       <button className="w-full p-2 pr-8 border rounded-md text-left relative bg-white">
                         {checkOutDate
-                          ? format(checkOutDate, "EEE, dd MMM yyyy")
-                          : "Select date"}
+                          ? `${checkOutDate}`
+                          : // ? format(checkOutDate, "EEE, dd MMM yyyy")
+                            "Select date"}
                         <Calendar className="absolute right-2 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                       </button>
                     </PopoverTrigger>
@@ -1039,8 +1041,8 @@ export default function HotelDetails() {
               <tr>
                 <td className="p-4 font-medium">Payment methods</td>
                 <td className="p-4 flex space-x-2">
-                  <VisaIcon/>
-                  <MasterIcon/>
+                  <VisaIcon />
+                  <MasterIcon />
                 </td>
               </tr>
             </tbody>
@@ -1098,7 +1100,9 @@ export default function HotelDetails() {
             </div>
             <div className="mb-4">
               <div className="flex justify-between mb-3">
-                <span className="text-[16px] font-[700]">Staff Friendliness</span>
+                <span className="text-[16px] font-[700]">
+                  Staff Friendliness
+                </span>
                 <span className="text-sm font-medium">7.1</span>
               </div>
               <div className="h-2 bg-gray-200 rounded-full">
