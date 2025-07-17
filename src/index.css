@@ -146,3 +146,15 @@ body {
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
+.custom-background {
+  background-image: none;
+}
+
+/* On medium screens (md) and up, apply the background image */
+@media (min-width: 768px) {
+  .custom-background {
+    background-image: url('../src/assets/planeillustration.svg');
+    background-position: center;
+    background-size: cover;
+  }
+}

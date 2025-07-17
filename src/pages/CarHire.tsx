@@ -72,26 +72,24 @@ export default function CarHire() {
     <div className="w-full min-h-screen ">
       {/* Hero section with background image */}
       <div
-        className="w-full flex justify-center items-center flex-col relative  h-[400px] bg-cover bg-center "
+        className="w-full p-4 flex md:justify-center items-center flex-col relative h-[80%] md:h-[400px] bg-cover bg-center "
         style={{
           backgroundImage: `url('${CarBanner}')`,
           //   backgroundPosition: "center 30%",
         }}
       >
         <div className=" flex items-center justify-center">
-          <h1 className="text-white text-[60px] font-[700] font-poppins text-center">
+          <h1 className="text-white mt-30 md:mt-0 text-[40px]  md:text-[60px] font-[700] font-poppins md:text-center">
             Flexible Rides for Every Travel
           </h1>
         </div>
-
-        <div className="bg-[#E6F0F166] rounded-2xl absolute top-[75%] p-4 w-6xl">
-          <div className="bg-white px-4  w-full rounded-lg overflow-hidden">
-            {/* Tabs */}
-            <div className="flex w-fit border-b">
+        <div className="bg-[#E6F0F166]  md:mt-0 rounded-2xl relative top-[100px] md:absolute md:top-[75%] w-[90vw] p-4 md:w-6xl">
+          <div className="bg-white px-4  md:w-full rounded-lg overflow-hidden">
+            <div className="flex gap-2 w-fit border-b">
               <button
                 onClick={() => setActiveTab("airport")}
                 className={cn(
-                  "px-6 py-4 text-gray-700 font-medium relative",
+                  "md:px-6 px-3 py-4 text-gray-700 text-[14px] font-medium relative",
                   activeTab === "airport" && "text-[#076476]"
                 )}
               >
@@ -103,7 +101,7 @@ export default function CarHire() {
               <button
                 onClick={() => setActiveTab("car")}
                 className={cn(
-                  "px-6 py-4 text-gray-700 font-medium relative",
+                  "md:px-6 py-4 px-3 text-[14px] text-gray-700 font-medium relative",
                   activeTab === "car" && "text-[#076476]"
                 )}
               >
@@ -114,11 +112,9 @@ export default function CarHire() {
               </button>
             </div>
 
-            {/* Airport Transportation Form */}
             {activeTab === "airport" && (
-              <div className="px-2 py-6 z-50 ">
-                {/* Direction buttons */}
-                <div className="flex gap-2 mb-6">
+              <div className="md:px-2 py-6 z-50 ">
+                <div className="flex  gap-2 mb-6">
                   <button
                     onClick={() => setDirection("from")}
                     className={cn(
@@ -143,10 +139,8 @@ export default function CarHire() {
                   </button>
                 </div>
 
-                {/* Form fields */}
-
-                <div className="bg-white flex justify-between item-center rounded-2xl border  p-1  md:p-2">
-                  <div className="flex   flex-1 justify-between gap-2  ">
+                <div className="bg-white flex flex-col md:flex-row justify-between item-center rounded-2xl border  p-2  md:p-2">
+                  <div className="flex md:flex-row gap-8 flex-col flex-1 justify-between md:gap-2  ">
                     <div className="flex  justify-center flex-1 flex-col bg-white rounded-md">
                       <div className="flex items-center text-2xl space-x-2 text-gray-500 px-2 ">
                         <MapPin className="text-gray-400 h-5 w-5" />
@@ -211,10 +205,7 @@ export default function CarHire() {
                               !pickupDate && "text-gray-500"
                             )}
                           >
-                            {pickupDate
-                              ? `${pickupDate}`
-                              : // ? format(pickupDate, "EEE, dd MMM yyyy")
-                                "Select date"}
+                            {pickupDate ? `${pickupDate}` : "Select date"}
                             <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                           </button>
                         </PopoverTrigger>
@@ -229,7 +220,6 @@ export default function CarHire() {
                       </Popover>
                     </div>
 
-                    {/* Check Out */}
                     <div className="flex   justify-center flex-[0.8] flex-col space-y-1 bg-white rounded-md">
                       <div className="flex items-center space-x-2 text-gray-500 px-2 ">
                         <Clock className="h-5 w-5" />
@@ -252,16 +242,13 @@ export default function CarHire() {
                     </div>
                   </div>
 
-                  {/* Search Button */}
-
-                  <button className="bg-[#076476] ml-3 hover:text-[#076476] font-[700] hover:bg-[#FFC215] rounded-r-2xl h-full  text-white px-8 py-6">
+                  <button className="bg-[#076476] md:ml-3 hover:text-[#076476] font-[700] hover:bg-[#FFC215] rounded-full md:rounded-none md:rounded-r-2xl h-full  text-white md:px-8 mt-4 md:mt-0 p-3 md:py-6">
                     Search
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Car Hire Form */}
             {activeTab === "car" && (
               <div className="px-2 py-6">
                 <div className="grid border  p-4 mt-1 rounded-lg grid-cols-1 md:grid-cols-6 gap-4">
@@ -300,10 +287,7 @@ export default function CarHire() {
                             !pickupDate && "text-gray-500"
                           )}
                         >
-                          {pickupDate
-                            ? `${pickupDate}`
-                            : // ? format(pickupDate, "EEE, dd MMM yyyy")
-                              "Select date"}
+                          {pickupDate ? `${pickupDate}` : "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>
                       </PopoverTrigger>
@@ -348,10 +332,7 @@ export default function CarHire() {
                             !dropoffDate && "text-gray-500"
                           )}
                         >
-                          {dropoffDate
-                            ? `${dropoffDate}`
-                            : // ? format(dropoffDate, "EEE, dd MMM yyyy")
-                              "Select date"}
+                          {dropoffDate ? `${dropoffDate}` : "Select date"}
                           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
                         </button>
                       </PopoverTrigger>
@@ -386,7 +367,7 @@ export default function CarHire() {
                 </div>
 
                 <div className="mt-10">
-                  <button className="rounded-full  font-[700] text-[16px] bg-[#076476] px-8 min-w-[200px] py-2.5 text-white hover:text-[#076476] hover:bg-[#ffce44]">
+                  <button className="rounded-full  font-[700] w-full md:max-w-[200px] text-[16px] bg-[#076476] px-8 min-w-[200px] py-2.5 text-white hover:text-[#076476] hover:bg-[#ffce44]">
                     Search
                   </button>
                 </div>
@@ -398,21 +379,17 @@ export default function CarHire() {
 
       {/* Booking card */}
       <Container>
-        <div data-aos="fade-right" className=" w-full  pt-40 mx-auto ">
+        <div data-aos="fade-right" className=" w-full pt-40  md:pt-40 mx-auto ">
           <div
-            style={{
-              backgroundImage: `url('${PlaneSvg}')`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-            className="mt-10 pb-32 pt-10   mb-4 flex justify-center gap-8 "
+           
+            className="custom-background md:mt-10 pb-32 md:pt-10   mb-4 flex md:flex-row flex-col justify-center items-center gap-14 md:gap-8 "
           >
             <div className="text-center max-w-[250px] relative">
               <div className=" mb-2 w-fit mx-auto flex items-center justify-center ">
                 <img src={SafetyFirst} alt="" />
               </div>
               <h3 className="text-[20px] font-[700] mb-2">Safety First</h3>
-              <p className="text-gray-600 text-[16px]">
+              <p className="text-black text-[16px]">
                 Vetted and courteous drivers for a stress-free experience
               </p>
             </div>
@@ -422,7 +399,7 @@ export default function CarHire() {
                 <img src={ReasonableRates} alt="" />
               </div>
               <h3 className="text-[20px] font-[700] mb-2">Reasonable Rates</h3>
-              <p className="text-gray-600 text-[16px]">
+              <p className="text-black text-[16px]">
                 Affordable, transparent pricing with no hidden charges
               </p>
             </div>
@@ -432,7 +409,7 @@ export default function CarHire() {
                 <img src={OnTime} alt="" />
               </div>
               <h3 className="text-[20px] font-[700] mb-2">On-Time Service</h3>
-              <p className="text-gray-600 text-[16px]">
+              <p className="text-black text-[16px]">
                 Punctual pickups and reliable drop-offs
               </p>
             </div>
@@ -442,7 +419,7 @@ export default function CarHire() {
                 <img src={FleetVariety} alt="" />
               </div>
               <h3 className="text-[20px] font-[700] mb-2">Fleet Variety</h3>
-              <p className="text-gray-600 text-[16px]">
+              <p className="text-black text-[16px]">
                 Wide range of vehicles to fit your travel needs.
               </p>
             </div>

@@ -62,10 +62,10 @@ export default function ContactSection() {
 
   return (
     <div className="w-full l py-8 mx-auto">
-      <div className="flex gap-6  ">
+      <div className="flex flex-col md:flex-row gap-6  ">
         {/* Contact Information */}
-        <div className="bg-[#0A3141] flex-1 p-8">
-          <h2 className="text-[28px] border-b-[1px]  pb-8 border-b-[#ffc1154d] font-[600] font-poppins text-white mb-8">
+        <div className="bg-[#0A3141] flex-1 p-4 md:p-8">
+          <h2 className="text-[20px] md:text-[28px] border-b-[1px]  pb-8 border-b-[#ffc1154d] font-[600] font-poppins text-white mb-8">
             Contact Information
           </h2>
 
@@ -76,7 +76,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-gray-500 text-[15px]">Contact Number</p>
-                <p className="text-gray-800 font-[700] text-[20px]">+234 (0)1234 567890</p>
+                <p className="text-gray-800 font-[700] text-[18px] md:text-[20px]">+234 (0)1234 567890</p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-gray-500 text-[15px]">Address</p>
-                <p className="text-gray-800 font-[700] text-[20px]">Portharcourt</p>
+                <p className="text-gray-800 font-[700] text-[18px] md:text-[20px]">Portharcourt</p>
               </div>
             </div>
           </div>
@@ -142,8 +142,8 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Form */}
-        <div className="p-8 flex-[1.7] md:col-span-2 bg-white">
-          <h2 className="text-3xl font-poppins text-[40px] font-[700] text-gray-900 mb-8">
+        <div className="md:p-8 mt-8 md:mt-0 flex-[1.7] md:col-span-2 bg-white">
+          <h2 className="text-[24px] md:text-[40px] font-poppins  font-[700] text-gray-900 mb-8">
             Send Us A Message
           </h2>
 
@@ -207,7 +207,7 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#076476] hover:text-[#076476] hover:bg-[#FFC215] text-white px-6 py-5 rounded-3xl mt-6 font-[700] text-[16px] transition-colors"
+                className="bg-[#076476] hover:text-[#076476] hover:bg-[#FFC215] text-white px-6 py-5 w-full md:max-w-[200px] rounded-3xl mt-6 font-[700] text-[16px] transition-colors"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
