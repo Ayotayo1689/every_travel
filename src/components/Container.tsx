@@ -8,7 +8,7 @@ interface ContainerProps {
 export default function Container({ children, Bg }: ContainerProps) {
     return (
         <div className={`w-full  pt-10 pb-6 ${Bg ? "bg-none" : "bg-white"} py-2`}>
-        <div className="container py-2  px-[6%] mx-auto flex items-center justify-between">
+        <div className="container py-2  md:px-[6%] px-4 mx-auto flex items-center justify-between">
           {children}
         </div>
       </div>

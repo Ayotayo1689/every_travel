@@ -222,7 +222,7 @@ const BannerSearch = () => {
         </div>
 
         {/* Search Button */}
-        <button className="bg-[#076476] md:max-w-[150px]  flex-1 mt-8 md:mt-0 hover:text-[#076476] font-[700] hover:bg-[#FFC215] rounded-full md:rounded-none   mb-4 md:mb-0   py-4  md:py-6 mx-4 md:mx-0 text-white">
+        <button className="bg-[#076476] md:max-w-[150px]  flex-1 mt-8 md:mt-0 hover:text-[#076476] font-[700] hover:bg-[#FFC215] rounded-full md:rounded-none   mb-4 md:mb-0   py-3  md:py-6 mx-4 md:mx-0 text-white">
           Search
         </button>
       </div>

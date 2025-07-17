@@ -171,92 +171,117 @@ export default function Navbar({
             </Link>
 
             <Button
-  className="block w-fit h-fit md:hidden"
-  variant="ghost"
-  onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
->
-  {
-    !isMobileNavOpen ?  <HanburgerIcon /> : <X/>
-  }
- 
-</Button>
-
-
-
+              className="block w-fit h-fit md:hidden"
+              variant="ghost"
+              onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            >
+              {!isMobileNavOpen ? <HanburgerIcon /> : <X />}
+            </Button>
 
             {isMobileNavOpen && (
-  <div className="md:hidden h-[100dvh] w-full px-4 py-4 fixed left-0 top-[70px] bg-white shadow-md space-y-4">
-    <ul className="space-y-4">
-      <li>
-        <Link to="/hotels" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Hotels
-        </Link>
-      </li>
-      <li>
-        <Link to="/airport-rides" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Airport Rides
-        </Link>
-      </li>
-      <li>
-        <Link to="/car-hire" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Car Hire
-        </Link>
-      </li>
-      <li>
-        <Link to="/corporate-travel" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Corporate Travel
-        </Link>
-      </li>
-      <li>
-        <Link to="/contact" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={linkClass}>
-          Contact
-        </Link>
-      </li>
-    </ul>
+              <div className="md:hidden h-[100dvh] w-full px-4 py-4 absolute z-50 left-0 top-[60px] bg-white shadow-md space-y-4">
+                <ul className="space-y-4">
+                  <li>
+                    <Link
+                      to="/hotels"
+                      onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                      className={linkClass}
+                    >
+                      Hotels
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/airport-rides"
+                      onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                      className={linkClass}
+                    >
+                      Airport Rides
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/car-hire"
+                      onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                      className={linkClass}
+                    >
+                      Car Hire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/corporate-travel"
+                      onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                      className={linkClass}
+                    >
+                      Corporate Travel
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/contact"
+                      onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                      className={linkClass}
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
 
-    <div className="flex flex-col gap-4">
-      {isLoggedIn ? (
-        <div className="flex flex-col gap-2">
-          <div className="text-gray-700">Hi, {userName}</div>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            My Profile
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            My Bookings
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            Settings
-          </Link>
-          <Link to="#" className="text-gray-700 hover:text-yellow-500">
-            Logout
-          </Link>
-        </div>
-      ) : (
-        <div className="flex flex-col gap-2">
-          <button
-            className="rounded-full border border-[#076476] bg-[#E6F0F1] px-5 py-2.5 text-[#076476] font-[700]"
-            onClick={() => {
-              dispatch(openModal({ type: "login" }));
-              setIsMobileNavOpen(false);
-            }}
-          >
-            Login
-          </button>
-          <button
-            className="rounded-full font-[700] bg-[#076476] px-5 py-2.5 text-white"
-            onClick={() => {
-              dispatch(openModal({ type: "signup" }));
-              setIsMobileNavOpen(false);
-            }}
-          >
-            Create Account
-          </button>
-        </div>
-      )}
-    </div>
-  </div>
-)}
-
+                <div className="flex flex-col gap-4">
+                  {isLoggedIn ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="text-gray-700">Hi, {userName}</div>
+                      <Link
+                        to="#"
+                        className="text-gray-700 hover:text-yellow-500"
+                      >
+                        My Profile
+                      </Link>
+                      <Link
+                        to="#"
+                        className="text-gray-700 hover:text-yellow-500"
+                      >
+                        My Bookings
+                      </Link>
+                      <Link
+                        to="#"
+                        className="text-gray-700 hover:text-yellow-500"
+                      >
+                        Settings
+                      </Link>
+                      <Link
+                        to="#"
+                        className="text-gray-700 hover:text-yellow-500"
+                      >
+                        Logout
+                      </Link>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <button
+                        className="rounded-full border border-[#076476] bg-[#E6F0F1] px-5 py-2.5 text-[#076476] font-[700]"
+                        onClick={() => {
+                          dispatch(openModal({ type: "login" }));
+                          setIsMobileNavOpen(false);
+                        }}
+                      >
+                        Login
+                      </button>
+                      <button
+                        className="rounded-full font-[700] bg-[#076476] px-5 py-2.5 text-white"
+                        onClick={() => {
+                          dispatch(openModal({ type: "signup" }));
+                          setIsMobileNavOpen(false);
+                        }}
+                      >
+                        Create Account
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             <nav className="hidden text-[16px] gap-8 md:flex">
               <ul className="flex items-center gap-8">

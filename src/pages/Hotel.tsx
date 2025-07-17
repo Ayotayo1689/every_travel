@@ -153,14 +153,14 @@ const Hotel = () => {
             alt={category.title}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[#032A3280] group-hover:bg-gradient-to-t from-[#03313a] via-[#07647673] to-transparent via-50% group-hover:via-70% transition-all duration-300"></div>
+          <div className="absolute inset-0 bg-[#032A3280] bg-gradient-to-t md:bg-none group-hover:bg-gradient-to-t from-[#03313a] via-[#07647673] to-transparent via-50% group-hover:via-70% transition-all duration-300"></div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 p-5 transform translate-y-[50px] group-hover:translate-y-[-0px] transition-transform duration-300 ease-in-out">
+        <div className="absolute inset-x-0 bottom-0 p-5 transform md:translate-y-[50px] translate-y-[-0px] group-hover:translate-y-[-0px] transition-transform duration-300 ease-in-out">
           <h3 className="text-[20px] font-[700]   text-white mb-2">
             {category.title}
           </h3>
-          <p className="text-white text-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p className="text-white opacity-100 max-w-[80%] text-[16px] md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {category.description}
           </p>
         </div>
@@ -222,16 +222,16 @@ const Hotel = () => {
         </Container>
 
         <Container>
-          <div data-aos="fade-down" className="w-full  mx-auto px-4 py-8">
+          <div data-aos="fade-down" className="w-full  mx-auto md:px-4 md:py-8">
             <div className="mb-6">
-              <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
+              <h2 className="md:text-[40px] text-[24px] font-poppins font-[700] text-[#032A32] mb-2">
                 Recent Listings
               </h2>
               <p className="text-[#1D1F1F] text-[18px] font-[400]">
                 Find newly added accommodations tailored to your travel needs
               </p>
             </div>
-            <div className="flex  gap-4  ">
+            <div className="flex flex-wrap gap-4  ">
               {hotels.map((hotel, index) => (
                 <div key={`${hotel.id}-${index}`}>
                   <HotelCard {...hotel} />
@@ -241,9 +241,9 @@ const Hotel = () => {
           </div>
         </Container>
         <Container>
-          <div data-aos="fade-up" className="w-full  mx-auto px-4 py-8">
+          <div data-aos="fade-up" className="w-full  mx-auto md:px-4 md:py-8">
             <div className="mb-6">
-              <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
+              <h2 className="text-[24px] md:text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
                 Hotel for Every Need
               </h2>
               <p className="text-[#1D1F1F] text-[18px] mb-10 font-[400]">
@@ -260,10 +260,13 @@ const Hotel = () => {
         </Container>
 
         <Container>
-          <div data-aos="fade-right" className="w-full  mx-auto px-4 py-8">
+          <div
+            data-aos="fade-right"
+            className="w-full  mx-auto md:px-4 md:py-8"
+          >
             <div className="flex items-center justify-between mb-6">
               <div className=" ">
-                <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
+                <h2 className="md:text-[40px] text-[24px] font-poppins font-[700] text-[#032A32] mb-2">
                   Spacious Apartments for Every Journey
                 </h2>
                 <p className="text-[#1D1F1F] text-[18px] font-[400]">
@@ -271,7 +274,10 @@ const Hotel = () => {
                   convenience.
                 </p>
               </div>
-              <Button variant="ghost" className="text-[#076476] hover:bg-white">
+              <Button
+                variant="ghost"
+                className="text-[#076476] hidden md:flex hover:bg-white"
+              >
                 View More <ArrowRight />
               </Button>
             </div>
@@ -284,9 +290,9 @@ const Hotel = () => {
         </Container>
         <Container>
           <div data-aos="fade-left" className="  w-full flex gap-6">
-            <div className="flex-1 rounded-l-3xl p-6 bg-[#E6F0F1]    ">
+            <div className="flex-1 rounded-2xl md:rounded-none md:rounded-l-3xl p-6 bg-[#E6F0F1]    ">
               <TypingText words={["List Your Property"]} speed />
-              <div className="font-poppins mt-4 font-[700] text-[40px]">
+              <div className="font-poppins mt-4 font-[700] text-[24px] md:text-[40px]">
                 Join Our Network Today
               </div>
               <p className="text-[18px] mt-2">
@@ -295,12 +301,12 @@ const Hotel = () => {
                 apartment, or vacation home, we help you connect with the right
                 audience - effortlessly.
               </p>
-              <Button className="rounded-3xl font-[700] py-5 px-6 font-[700] text-[16px] bg-[#076476] hover:text-[#076476] hover:bg-[#FFC215] mt-10">
+              <Button className="rounded-3xl py-5 px-6 font-[700] text-[16px] bg-[#076476] hover:text-[#076476] hover:bg-[#FFC215] mt-10">
                 List Your Property
               </Button>
             </div>
 
-            <div className="flex-1 p-6 rounded-r-3xl flex justify-center items-center bg-[#043741]">
+            <div className="flex-1 hidden  p-6 rounded-r-3xl md:flex justify-center items-center bg-[#043741]">
               <img src={Networking} alt="" />
             </div>
           </div>

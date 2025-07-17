@@ -6,10 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
+import TextField from "@mui/material/TextField";
+
 export default function Profile() {
   const [edit, setEdit] = useState<any>(null);
-
-  const handleCancel = () => setEdit(null);
 
   return (
     <div className="space-y-6">
@@ -122,8 +122,19 @@ export default function Profile() {
                   </p>
                   <form className="space-y-4">
                     <div>
-                      <Label>First name *</Label>
-                      <Input  defaultValue="Jane" />
+                      {/* <Label>First name *</Label>
+                      <Input  defaultValue="Jane" /> */}
+
+                      <TextField
+                        id="filled-basic"
+                        label="Filled"
+                        variant="filled"
+                        sx={{
+                          width:"100%",
+                          // border:"1px solid red",
+                          backgroundColor:"white"
+                        }}
+                      />
                     </div>
                     <div>
                       <Label>Last name *</Label>

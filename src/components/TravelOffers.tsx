@@ -163,13 +163,13 @@ export default function TravelOffers() {
   };
 
   return (
-    <div className="w-full  mx-auto px-4 py-8">
+    <div className="w-full  mx-auto md:px-4 md:py-8">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-[28px] font-poppins font-[600] text-gray-800">Offers for you</h2>
-          <p className="text-gray-600 text-[18px]">Promos, deals and exclusive offers...</p>
+          <h2 className="md:text-[28px] text-[24px] font-poppins font-[600] text-gray-800">Offers for you</h2>
+          <p className="text-gray-600 text-[16px] md:text-[18px]">Promos, deals and exclusive offers...</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="md:flex hidden space-x-2">
           <Button
             variant="outline"
             size="icon"
@@ -214,6 +214,29 @@ export default function TravelOffers() {
           ))}
         </div>
       </div>
+
+      <div className="flex md:hidden items-end justify-end mt-4 space-x-2">
+          <Button
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+            onClick={prevSlide}
+            disabled={isTransitioning}
+            aria-label="Previous offers"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+            onClick={nextSlide}
+            disabled={isTransitioning}
+            aria-label="Next offers"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </Button>
+        </div>
     </div>
   );
 }

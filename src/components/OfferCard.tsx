@@ -15,7 +15,7 @@ export const OfferCard = ({ offer }: { offer: OfferProps }) => {
   return (
     <div
       data-aos="fade-left"
-      className={`relative overflow-hidden rounded-2xl border   transition-all duration-300 group ${offer.color} h-[250px]`}
+      className={`relative overflow-hidden rounded-2xl border   transition-all duration-300 group ${offer.color} h-[200px] md:h-[250px]`}
     >
       <div className="flex h-full relative">
         <div className="w-[90%] z-10    -top-[8vh] right-[42%] border-6 group-hover:border-yellow-100 group-hover:bg-white duration-300 ease-out aspect-square absolute rounded-full bg-[#E6F0F1] border-white">
@@ -30,7 +30,7 @@ export const OfferCard = ({ offer }: { offer: OfferProps }) => {
                 {offer.provider}
               </span>
             </div>
-            <h3 className="text-[21px] font-poppins font-[600] text-gray-900 mb-4 leading-tight">
+            <h3 className="text-[16px] md:text-[21px] font-poppins font-[600] text-gray-900 mb-4 leading-tight">
               {offer.title}
             </h3>
             <p className="text-[10.5px] text-gray-700">{offer.description}</p>

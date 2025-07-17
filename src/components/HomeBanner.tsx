@@ -75,7 +75,7 @@ export default function TravelBooking() {
   return (
     <div
       data-aos="fade-right"
-      className="relative min-h-[80dvh] w-full flex flex-col items-center justify-center"
+      className="relative py-[100px] min-h-[80dvh] w-full flex flex-col items-center justify-center"
     >
       {/* Background Image */}
       <div
@@ -174,9 +174,9 @@ export default function TravelBooking() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 mx-auto mb-8">
-        <h1 className="text-[60px]  flex justify-center items-center gap-3 font-[700] font-poppins text-white">
+        <h1 className="md:text-[60px] text-[40px] items-start  flex-col md:flex-row  flex md:justify-center md:items-center gap-3 font-[700] font-poppins text-white">
           Simplify your{" "}
-          <div className="w-[200px] h-fit flex ">
+          <div className="w-[200px] min-h-[60px] flex ">
             <span
               className={
                 colors[words[loopNum % words.length] as keyof typeof colors]
@@ -186,7 +186,7 @@ export default function TravelBooking() {
             </span>
           </div>
         </h1>
-        <h2 className="text-[60px] font-poppins font-[700] text-white">
+        <h2 className="md:text-[60px] text-start text-[40px]  font-poppins font-[700] text-white">
           Experience with EveryTravell
         </h2>
       </div>

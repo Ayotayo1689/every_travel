@@ -85,7 +85,7 @@ const hotels = [
   },
 ];
 
-export default function HotelDealsCarousel({ locationText }:any) {
+export default function HotelDealsCarousel({ locationText }: any) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -167,9 +167,9 @@ export default function HotelDealsCarousel({ locationText }:any) {
   };
 
   return (
-    <div data-aos="fade-up" className="w-full  mx-auto px-4 py-8">
+    <div data-aos="fade-up" className="w-full  mx-auto md:px-4 py-8">
       <div className="mb-6">
-        <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
+        <h2 className="md:text-[40px] text-[24px]  font-poppins font-[700] text-[#032A32] mb-2">
           Top Hotel Deals {locationText ?? null}
         </h2>
         <p className="text-[#1D1F1F] text-[18px] font-[400]">
@@ -181,7 +181,7 @@ export default function HotelDealsCarousel({ locationText }:any) {
         {/* Navigation buttons */}
         <button
           onClick={prevSlide}
-          className="absolute -left-10 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-2 shadow-sm hover:bg-gray-100 transition-colors"
+          className="absolute -left-0  md:-left-10 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-2 shadow-sm hover:bg-gray-100 transition-colors"
           aria-label="Previous"
           disabled={isTransitioning}
         >
@@ -190,7 +190,7 @@ export default function HotelDealsCarousel({ locationText }:any) {
 
         <button
           onClick={nextSlide}
-          className="absolute -right-10 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-2 shadow-sm hover:bg-gray-100 transition-colors"
+          className="absolute -right-0 md:-right-10 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-2 shadow-sm hover:bg-gray-100 transition-colors"
           aria-label="Next"
           disabled={isTransitioning}
         >
@@ -213,7 +213,7 @@ export default function HotelDealsCarousel({ locationText }:any) {
             {allHotels.map((hotel, index) => (
               <div
                 key={`${hotel.id}-${index}`}
-                className="flex-shrink-0 px-3"
+                className="flex-shrink-0 md:px-3"
                 style={{ width: `${getCardWidth()}%` }}
               >
                 <HotelCard {...hotel} />

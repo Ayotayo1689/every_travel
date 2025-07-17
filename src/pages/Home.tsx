@@ -112,44 +112,53 @@ const Home = () => {
           <TravelOffers />
         </Container>
         <Container>
-          <div data-aos="fade-right" className="flex  w-full gap-6">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col md:flex-row  w-full gap-4"
+          >
             {destinations.map((destination, index) => (
               <div key={index} className="flex-1 h-[400px] ">
                 <div className="flex h-[100%] items-center justify-center flex-col">
                   {index === 0 && (
                     <div className=" mb-6 w-full  ">
-                      <h2 className="text-[40px] font-poppins font-[700] text-gray-900 leading-tight">
-                        Top
-                        <br />
-                        Travel
-                        <br />
+                      <h2 className="text-[24px] md:text-[40px] font-poppins font-[700] text-gray-900 leading-tight">
+                        Top <br className="hidden md:block" />
+                        Travel <br className="hidden md:block" />
                         Destinations
                       </h2>
+
+                      <div className="block md:hidden mt-6 w-full  ">
+                        <p className="text-[16px] text-[#424748] font-[700]">
+                          Discover the best places to visit, stay, and explore.
+                          When it comes to planning a dream vacation, some
+                          destinations stand out
+                        </p>
+                      </div>
                     </div>
                   )}
 
-                  <div className=" flex-1 min-h-[60%] w-full  ">
+                  <div className=" flex-1 min-h-[50%] w-full  ">
                     <div className="relative h-[100%]   overflow-hidden rounded-xl group cursor-pointer">
-                      <div className="relative  w-full h-[100%]  ">
+                      <div className="relative  w-full h-[250px] md:h-[100%]  ">
                         <img
                           src={destination.image || "/placeholder.svg"}
                           alt={destination.name}
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute text-teal-900 inset-0 bg-[#032A3280] group-hover:bg-[#032a32e0] transition-colors duration-300"></div>
+                        <div className="absolute bg-[#032a32c4] text-teal-900 inset-0 md:bg-[#032A3280] group-hover:bg-[#032a32e0] transition-colors duration-300"></div>
 
                         <div className=" p-4 bottom-0 w-full  absolute">
-                          <div className="flex group-hover:bg-[#ffffff56] rounded-2xl items-center p-3 justify-between">
+                          <div className="flex bg-[#ffffff56] md:bg-[#0000] group-hover:bg-[#ffffff56] rounded-2xl items-center p-3 justify-between">
                             <div className=" bottom-0 left-0  z-10">
-                              <h3 className="text-white text-2xl font-semibold">
+                              <h3 className="text-white mb-2 md:mb-0 md:text-[24px] text-[20px] font-semibold">
                                 {destination.name}
                               </h3>
-                              <p className="text-white text-sm">
+                              <p className="text-white text-[16px]">
                                 {destination.hotels} hotels
                               </p>
                             </div>
 
-                            <div className=" w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className=" opacity-100 w-fit md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                               <div className="bg-yellow-100 rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors">
                                 <ArrowUpRight className="h-5 w-5 text-yellow-500" />
                               </div>
@@ -160,7 +169,7 @@ const Home = () => {
                     </div>
                   </div>
                   {index === destinations.length - 1 && (
-                    <div className=" mt-6 w-full  ">
+                    <div className=" mt-6 hidden md:block w-full  ">
                       <p className="text-[20px] font-[700]">
                         Discover the best places to visit, stay, and explore.
                         When it comes to planning a dream vacation, some
@@ -177,8 +186,8 @@ const Home = () => {
           <HotelDealsCarousel />
         </Container>
 
-        <Container>
-          <div data-aos="flip-left" className="w-full  mx-auto px-4 py-8">
+       <Container  >
+          <div data-aos="flip-left" className="w-full hidden md:block  mx-auto px-4 py-8">
             <div className="mb-6">
               <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
                 Recommended Hotels for You
@@ -198,7 +207,7 @@ const Home = () => {
             </div>
           </div>
         </Container>
-        <Container>
+         <Container>
           <div
             style={{
               backgroundImage: `url("${GlobeIll}")`,
@@ -207,15 +216,15 @@ const Home = () => {
               backgroundRepeat: "no-repeat",
             }}
             data-aos="fade-right"
-            className=" w-full "
+            className=" w-full p-2   "
           >
-            <h1 className="font-poppins text-center text-[#032A32] text-[40px] font-[700] mb-6">
+            <h1 className="font-poppins text-center text-[#032A32] md:text-[40px] text-[24px] font-[700] mb-6">
               Enjoy Every Trip, Every Stay, EveryTravell!
             </h1>
-            <div className="flex justify-between min-h-[80dvh]  w-full">
-              <div className="flex-1 max-w-[320px]  items-center gap-6 justify-center flex flex-col">
+            <div className="flex gap-6  flex-col md:flex-row justify-between min-h-[80dvh]  w-full">
+              <div className="flex-1 md:max-w-[320px]  items-center gap-6 justify-center flex flex-col">
                 <div className="w-full border p-4 rounded-2xl aspect-video bg-[#fafeff] ">
-                  <img src={AllInOneSvg} alt="" />
+                  <img src={AllInOneSvg} alt=""  />
                   <p className="text-[20px] font-[700] text-[#032A32] mt-4">
                     All in One{" "}
                   </p>
@@ -235,7 +244,7 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex-1 max-w-[320px]  items-center gap-6 justify-center flex flex-col">
+              <div className="flex-1 md:max-w-[320px]  items-center gap-6 justify-center flex flex-col">
                 <div className="w-full border p-4 rounded-2xl aspect-video bg-[#fafeff] ">
                   <img src={AllInOneSvg} alt="" />
                   <p className="text-[20px] font-[700] text-[#032A32] mt-4">
