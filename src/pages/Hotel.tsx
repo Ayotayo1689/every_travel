@@ -231,7 +231,7 @@ const Hotel = () => {
                 Find newly added accommodations tailored to your travel needs
               </p>
             </div>
-            <div className=" flex flex-wrap md:grid md:grid-cols-3 flex-wrap gap-4  ">
+            <div className=" flex  md:grid md:grid-cols-3 flex-wrap gap-4  ">
               {hotels.map((hotel, index) => (
                 <div key={`${hotel.id}-${index}`}>
                   <HotelCard {...hotel} />

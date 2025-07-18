@@ -26,7 +26,7 @@ export default function HotelCard({
   reviews,
   discount,
   featured,
-}: HotelCardProps) {
+}: HotelCardProps | any) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const formatPrice = (price: number) => {

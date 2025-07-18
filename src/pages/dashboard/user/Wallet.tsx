@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Plus, CreditCard, Copy, Delete, DeleteIcon, Trash } from "lucide-react";
+import { Plus,  Trash } from "lucide-react";
 import { VisaLogoIcon } from "@/assets/icons/Icons";
 
 const transactions = [

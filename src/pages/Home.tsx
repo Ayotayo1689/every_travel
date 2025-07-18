@@ -94,15 +94,15 @@ const Home = () => {
     },
   ];
 
-  const allHotels = [
-    ...hotels
-      .slice(hotels.length - 2)
-      .map((hotel) => ({ ...hotel, id: hotel.id - hotels.length })),
-    ...hotels,
-    ...hotels
-      .slice(0, 2)
-      .map((hotel) => ({ ...hotel, id: hotel.id + hotels.length })),
-  ];
+  // const allHotels = [
+  //   ...hotels
+  //     .slice(hotels.length - 2)
+  //     .map((hotel) => ({ ...hotel, id: hotel.id - hotels.length })),
+  //   ...hotels,
+  //   ...hotels
+  //     .slice(0, 2)
+  //     .map((hotel) => ({ ...hotel, id: hotel.id + hotels.length })),
+  // ];
   return (
     <div>
       <TravelBooking />

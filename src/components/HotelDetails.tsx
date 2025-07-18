@@ -480,7 +480,7 @@ export default function HotelDetails() {
     children: 0,
   });
   // const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
-  const [address, setAddress] = useState(
+  const [address] = useState(
     "1600 Amphitheatre Parkway, Mountain View, CA"
   );
 

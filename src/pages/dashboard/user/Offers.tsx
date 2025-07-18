@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Building2, Car } from "lucide-react"
 import { HotelIcon } from "@/assets/icons/Icons"
 
 const offers = [
