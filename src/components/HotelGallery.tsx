@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Share, Heart } from "lucide-react";
+import {   Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PhotoGalleryModal } from "./PhotoGalleryModal";
 import { ImageCarouselModal } from "./ImageCarouselModal";
@@ -10,7 +10,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Container from "./Container";

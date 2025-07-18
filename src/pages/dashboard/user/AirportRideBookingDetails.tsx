@@ -1,7 +1,7 @@
 import { CabIcon, LoggageIcon } from "@/assets/icons/Icons";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, UserIcon } from "lucide-react";
+import {  UserIcon } from "lucide-react";
 
 export default function AirportRideBookingDetails() {
   return (

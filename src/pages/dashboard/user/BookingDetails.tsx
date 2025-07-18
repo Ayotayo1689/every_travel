@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { CalendarDays, User, Mail, Phone, Globe, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function BookingDetails() {
   const getStars = (rating: number) => {

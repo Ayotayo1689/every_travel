@@ -1,24 +1,8 @@
 "use client";
 
-import type React from "react";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  MapPin,
-  CalendarIcon,
-  ChevronDown,
-  Minus,
-  Plus,
-  UserIcon,
-} from "lucide-react";
+
 // import { format } from "date-fns";
 import HomeBanner from "../assets/HomeBanner.svg";
 import BannerSearch from "./BannerSearch";
@@ -36,12 +20,12 @@ export default function TravelBooking() {
     Pickup: "text-[#FFC215]",
   };
 
-  const [checkInDate, setCheckInDate] = useState<Date>();
-  const [checkOutDate, setCheckOutDate] = useState<Date>();
-  const [rooms, setRooms] = useState(1);
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [guestsOpen, setGuestsOpen] = useState(false);
+  // const [checkInDate, setCheckInDate] = useState<Date>();
+  // const [checkOutDate, setCheckOutDate] = useState<Date>();
+  // const [rooms, setRooms] = useState(1);
+  // const [adults, setAdults] = useState(1);
+  // const [children, setChildren] = useState(0);
+  // const [guestsOpen, setGuestsOpen] = useState(false);
 
   useEffect(() => {
     const handleTyping = () => {

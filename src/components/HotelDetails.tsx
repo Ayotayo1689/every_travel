@@ -5,8 +5,6 @@ import {
   Calendar,
   Check,
   ChevronDown,
-  MapPin,
-  Heart,
   X,
   Minus,
   Plus,
@@ -40,28 +38,28 @@ import MapButton from "./MapButton";
 import HotelCard from "./HotelCard";
 
 // Facility icons
-const FacilityIcon = ({ type }: { type: string }) => {
-  switch (type) {
-    case "Bar":
-      return <span className="text-[#076476]">🍸</span>;
-    case "Gym":
-      return <span className="text-[#076476]">🏋️</span>;
-    case "WiFi":
-      return <span className="text-[#076476]">📶</span>;
-    case "Pool":
-      return <span className="text-[#076476]">🏊</span>;
-    case "Breakfast":
-      return <span className="text-[#076476]">🍳</span>;
-    case "Airport":
-      return <span className="text-[#076476]">✈️</span>;
-    case "Spa":
-      return <span className="text-[#076476]">💆</span>;
-    case "Cleaning":
-      return <span className="text-[#076476]">🧹</span>;
-    default:
-      return <span className="text-[#076476]">✓</span>;
-  }
-};
+// const FacilityIcon = ({ type }: { type: string }) => {
+//   switch (type) {
+//     case "Bar":
+//       return <span className="text-[#076476]">🍸</span>;
+//     case "Gym":
+//       return <span className="text-[#076476]">🏋️</span>;
+//     case "WiFi":
+//       return <span className="text-[#076476]">📶</span>;
+//     case "Pool":
+//       return <span className="text-[#076476]">🏊</span>;
+//     case "Breakfast":
+//       return <span className="text-[#076476]">🍳</span>;
+//     case "Airport":
+//       return <span className="text-[#076476]">✈️</span>;
+//     case "Spa":
+//       return <span className="text-[#076476]">💆</span>;
+//     case "Cleaning":
+//       return <span className="text-[#076476]">🧹</span>;
+//     default:
+//       return <span className="text-[#076476]">✓</span>;
+//   }
+// };
 
 // Room type data
 const roomTypes = [
@@ -481,7 +479,7 @@ export default function HotelDetails() {
     adults: 1,
     children: 0,
   });
-  const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
+  // const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
   const [address, setAddress] = useState(
     "1600 Amphitheatre Parkway, Mountain View, CA"
   );
