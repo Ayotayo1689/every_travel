@@ -7,9 +7,18 @@ import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 export default function Profile() {
   const [edit, setEdit] = useState<any>(null);
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value);
+  };
 
   return (
     <div className="space-y-6">
@@ -121,32 +130,51 @@ export default function Profile() {
                     passport or license.
                   </p>
                   <form className="space-y-4">
-                    <div>
-                      {/* <Label>First name *</Label>
-                      <Input  defaultValue="Jane" /> */}
-
+                    <div className="mb-6">
                       <TextField
                         id="filled-basic"
-                        label="Filled"
+                        label="First name"
                         variant="filled"
+                        defaultValue={"Jane"}
                         sx={{
-                          width:"100%",
-                          // border:"1px solid red",
-                          backgroundColor:"white"
+                          width: "100%",
+                          backgroundColor: "white",
                         }}
                       />
                     </div>
-                    <div>
-                      <Label>Last name *</Label>
-                      <Input defaultValue="Doe" />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Last name"
+                        variant="filled"
+                        defaultValue={"Doe"}
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
-                    <div>
-                      <Label>Date of birth *</Label>
-                      <Input placeholder="MM/DD/YYYY" type="date" />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Date of birth"
+                        variant="filled"
+                        placeholder="MM/DD/YYYY"
+                        type="date"
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
-                    <div>
-                      <Label>Gender</Label>
-                      <RadioGroup defaultValue="none">
+                    <div className="mb-6">
+                      <Label className="text-[16px] font-[700] mb-4">
+                        Gender
+                      </Label>
+                      <RadioGroup
+                        className="flex flex-col gap-6"
+                        defaultValue="none"
+                      >
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="male" id="male" />
                           <Label htmlFor="male">Male</Label>
@@ -161,7 +189,7 @@ export default function Profile() {
                         </div>
                       </RadioGroup>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex mt-12 gap-2">
                       <Button
                         type="submit"
                         className="bg-[#076476] text-white rounded-full px-6"
@@ -185,43 +213,114 @@ export default function Profile() {
                       Make sure this information matches your travel ID, like
                       your passport or license.
                     </p>
-                    <div>
-                      <Label>Email *</Label>
-                      <Input type="email" defaultValue="janedoe@gmail.com" />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Email"
+                        type="email"
+                        variant="filled"
+                        defaultValue="janedoe@gmail.com"
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
-                    <div className="flex gap-2">
-                      <div className="w-1/3">
-                        <Label>Country code</Label>
-                        <Input defaultValue="+234" />
+                    <div className="flex mb-6 gap-2">
+                      <div className="w-1/3 ">
+                       
+
+                        <FormControl variant="filled" sx={{ minWidth: "100%" }}>
+                          <InputLabel id="demo-simple-select-filled-label">
+                            Age
+                          </InputLabel>
+                          <Select
+                            labelId="demo-simple-select-filled-label"
+                            id="demo-simple-select-filled"
+                            value={age}
+                            onChange={handleChange}
+                          >
+                            <MenuItem value="">
+                              <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                          </Select>
+                        </FormControl>
                       </div>
                       <div className="w-2/3">
-                        <Label>Phone number</Label>
-                        <Input defaultValue="+234 8012345678" />
+                        <TextField
+                          id="filled-basic"
+                          label="Phone number"
+                          variant="filled"
+                          defaultValue="+234 8012345678"
+                          sx={{
+                            width: "100%",
+                            backgroundColor: "white",
+                          }}
+                        />
                       </div>
                     </div>
-                    <div>
-                      <Label>Country *</Label>
-                      <Input defaultValue="Nigeria" />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Country"
+                        variant="filled"
+                        defaultValue={"Nigeria"}
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
-                    <div>
-                      <Label>Street name and house number</Label>
-                      <Input />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Street name and house number"
+                        variant="filled"
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
                     <div className="flex gap-2">
                       <div className="w-1/2">
-                        <Label>City</Label>
-                        <Input />
+                        <TextField
+                          id="filled-basic"
+                          label="City"
+                          variant="filled"
+                          sx={{
+                            width: "100%",
+                            backgroundColor: "white",
+                          }}
+                        />
                       </div>
-                      <div className="w-1/2">
-                        <Label>State</Label>
-                        <Input />
+                      <div className="w-1/2 mb-2">
+                        <TextField
+                          id="filled-basic"
+                          label="State"
+                          variant="filled"
+                          sx={{
+                            width: "100%",
+                            backgroundColor: "white",
+                          }}
+                        />
                       </div>
                     </div>
-                    <div>
-                      <Label>Zip code</Label>
-                      <Input />
+                    <div className="mb-6">
+                      <TextField
+                        id="filled-basic"
+                        label="Zip code"
+                        variant="filled"
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "white",
+                        }}
+                      />
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex mt-12 gap-2">
                       <Button
                         type="submit"
                         className="bg-[#076476] text-white rounded-full px-6"

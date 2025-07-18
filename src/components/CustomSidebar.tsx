@@ -61,7 +61,7 @@ const menuItems = [
 export default function CustomSidebar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [openSubmenu, setOpenSubmenu] = useState("My Bookings");
+  const [openSubmenu, setOpenSubmenu] = useState("");
 
   const handleSignOut = () => {
     navigate("/");
