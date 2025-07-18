@@ -45,7 +45,7 @@ export default function HotelCard({ hotel }: HotelCardProps) {
           <img
             src={hotel?.image || "/placeholder.svg"}
             alt={hotel?.name}
-            className="w-[320px] rounded-lg h-[240px] object-cover"
+            className="md:w-[320px] rounded-lg h-[240px] object-cover"
           />
           {hotel?.discount && (
             <Badge className="absolute top-2 right-2 p-2 bg-[#076476]">
@@ -71,7 +71,7 @@ export default function HotelCard({ hotel }: HotelCardProps) {
           </Button>
         </div>
 
-        <div className="flex-1  px-6 flex flex-col justify-between py-4">
+        <div className="flex-1 px-2 md:px-6 flex flex-col justify-between py-4">
           <div className="flex flex-col md:flex-row justify-between">
             <div>
               <h2 className="text-[20px] mb-2 font-[700]">{hotel?.name}</h2>
@@ -113,16 +113,16 @@ export default function HotelCard({ hotel }: HotelCardProps) {
 
 
 
-            <div className="mt-4 md:mt-0 text-right">
+            <div className="mt-4 md:mt-0 flex md:flex-col flex-row  md:items-end items-center text-right">
               <div className="text-sm">From</div>
-              <div className="text-xl font-bold">
+              <div className="text-xl ml-2 font-bold">
                 ₦{hotel?.price.toLocaleString()}
               </div>
               <div className="text-sm text-muted-foreground">/night</div>
             </div>
           </div>
 
-<div className="border-b my-2 "></div>
+<div className="border-b my-4 "></div>
 
           <div className="">
                 <p className="text-sm font-medium mb-1">Key facilities</p>

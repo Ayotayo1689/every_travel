@@ -20,6 +20,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { hotels, type Hotel } from "@/lib/data";
 import HotelCard from "./Hotel-card";
 import { Slider } from "./TealSlider";
+import { SortIcon } from "@/assets/icons/Icons";
 
 type SortOption = {
   label: string;
@@ -175,20 +176,55 @@ export default function HotelSearch() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-     
-
       <div className="md:col-span-1">
-      <Button
-          variant="outline"
-          className="mb-4 flex items-center gap-2"
-          onClick={() => setShowMap(!showMap)}
-        >
-          <MapPin className="h-4 w-4" />
-          {showMap ? "Hide map" : "Show on map"}
-        </Button>
-        <Card className=" p-0 rounded-none shadow-none ">
+        <div className="flex items-center mb-4 justify-between gap-4">
+          <div className="flex md:hidden flex-1  items-center gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="flex flex-1 rounded-full items-center gap-2"
+                >
+                  <SortIcon />
+                  <span>Sort</span> <span className="hidden md:block">: {selectedSort.label}</span>
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[200px]">
+                {sortOptions.map((option) => (
+                  <DropdownMenuItem
+                    key={option.value}
+                    onClick={() => setSelectedSort(option)}
+                    className={
+                      selectedSort.value === option.value ? "bg-accent" : ""
+                    }
+                  >
+                    {option.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <Button
+            variant="outline"
+            className="flex flex-1  md:hidden rounded-full items-center gap-2"
+          >
+            <SlidersHorizontal/>
+            Filter
+            <ChevronDown className="h-4 w-4 ml-1" />
+          </Button>
+          <Button
+            variant="outline"
+            className="md:mb-4 flex-1 rounded-full md:rounded-lg flex items-center gap-2"
+            onClick={() => setShowMap(!showMap)}
+          >
+            <MapPin className="h-4 w-4" />
+            {showMap ? "Hide map" : "Map"}
+          </Button>
+        </div>
+        <Card className=" p-0  md:sticky top-[150px] rounded-none shadow-none ">
           <div className="p-4 border-b">
-          <h2 className="font-semibold text-lg">Filter by</h2>
+            <h2 className="font-semibold text-lg">Filter by</h2>
           </div>
 
           <div className=" p-4 space-y-6">
@@ -227,7 +263,8 @@ export default function HotelSearch() {
                   onValueChange={(value: [number, number]) =>
                     setPriceRange(value as [number, number])
                   }
-                  className="my-6 text-red-500" color="red"
+                  className="my-6 text-red-500"
+                  color="red"
                 />
               </div>
             </div>
@@ -314,81 +351,77 @@ export default function HotelSearch() {
             </div>
           </div>
         </Card>
-    
       </div>
 
       <div className="md:col-span-3 space-y-4">
-
-      <div className="md:col-span-4 ">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-semibold">
-            {filteredHotels.length} properties found
-          </h1>
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="flex items-center gap-2">
-                  <SlidersHorizontal className="h-4 w-4" />
-                  <span>Sort by:</span> {selectedSort.label}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[200px]">
-                {sortOptions.map((option) => (
-                  <DropdownMenuItem
-                    key={option.value}
-                    onClick={() => setSelectedSort(option)}
-                    className={
-                      selectedSort.value === option.value ? "bg-accent" : ""
-                    }
-                  >
-                    {option.label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+        <div className="md:col-span-4 ">
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-xl font-semibold">
+              {filteredHotels.length} properties found
+            </h1>
+            <div className="md:flex hidden items-center gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <SortIcon />
+                    <span>Sort by:</span> {selectedSort.label}
+                    <ChevronDown className="h-4 w-4 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-[200px]">
+                  {sortOptions.map((option) => (
+                    <DropdownMenuItem
+                      key={option.value}
+                      onClick={() => setSelectedSort(option)}
+                      className={
+                        selectedSort.value === option.value ? "bg-accent" : ""
+                      }
+                    >
+                      {option.label}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {selectedPropertyTypes.map((type) => (
-            <Badge
-              key={type}
-              variant="secondary"
-              className="flex items-center gap-1 px-3 py-1.5"
-            >
-              {type}
-              <button
-                className="ml-1 rounded-full"
-                onClick={() => handlePropertyTypeChange(type)}
+          <div className="flex flex-wrap  gap-2 mb-4">
+            {selectedPropertyTypes.map((type) => (
+              <Badge
+                key={type}
+                variant="secondary"
+                className="flex bg-[#E6F0F1] rounded-full border-2 text-[#076476] font-[700] border-[#076476] items-center gap-1 px-3 py-1.5"
               >
-                ×
-              </button>
-            </Badge>
-          ))}
-          {(selectedPropertyTypes.length > 0 ||
-            selectedAmenities.length > 0 ||
-            selectedRating !== null) && (
-            <Button
-              variant="link"
-              className="text-sm h-8 px-2"
-              onClick={handleClearFilters}
-            >
-              Clear all filters
-            </Button>
+                {type}
+                <button
+                  className="ml-1 rounded-full"
+                  onClick={() => handlePropertyTypeChange(type)}
+                >
+                  ×
+                </button>
+              </Badge>
+            ))}
+            {(selectedPropertyTypes.length > 0 ||
+              selectedAmenities.length > 0 ||
+              selectedRating !== null) && (
+              <Button
+                variant="link"
+                className="text-sm font-[700] text-[#076476] h-8 px-2"
+                onClick={handleClearFilters}
+              >
+                Clear all filters
+              </Button>
+            )}
+          </div>
+
+          {showMap && (
+            <div className="w-full h-[300px] bg-muted rounded-lg mb-4 flex items-center justify-center">
+              <p className="text-muted-foreground">
+                Map view would be displayed here
+              </p>
+            </div>
           )}
         </div>
-
-       
-
-        {showMap && (
-          <div className="w-full h-[300px] bg-muted rounded-lg mb-4 flex items-center justify-center">
-            <p className="text-muted-foreground">
-              Map view would be displayed here
-            </p>
-          </div>
-        )}
-      </div>
         {filteredHotels.slice(0, visibleCount).map((hotel) => (
           <HotelCard key={hotel.id} hotel={hotel} />
         ))}

@@ -16,6 +16,7 @@ import {
 import Container from "./Container";
 import { ShareIcon } from "@/assets/icons/Icons";
 import HotelDetails from "./HotelDetails";
+import MobileImageCarousel from "./HotelCarouselImages";
 
 // Sample hotel images
 const hotelImages = [
@@ -141,14 +142,34 @@ export default function HotelGallery() {
         <div className=" ">
           {/* Hotel Header */}
           <div className="flex mb-6 justify-between items-center ">
-            <div className="">
-              <div className="flex text-amber-400 mb-1">
-                <span className="text-[25px]">★</span>
-                <span className="text-[25px]">★</span>
-                <span className="text-[25px]">★</span>
-                <span className="text-[25px]">★</span>
-                <span className="text-[25px]">★</span>
+            <div className="w-full">
+              <div className="flex w-full justify-between items-center">
+                <div className="flex text-amber-400 mb-1">
+                  <span className="text-[25px]">★</span>
+                  <span className="text-[25px]">★</span>
+                  <span className="text-[25px]">★</span>
+                  <span className="text-[25px]">★</span>
+                  <span className="text-[25px]">★</span>
+                </div>
+
+                <div className="flex  gap-4 justify-between items-center">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full md:bg-[#076476] text-[#076476] md:text-white hover:bg-teal-800"
+                  >
+                    <ShareIcon />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="rounded-full border-0 md:border-2 md:border-[#076476] text-[16px] font-[700] text-[#076476] shadow-none hover:bg-teal-50"
+                  >
+                    <Heart className="h-5 w-5 mr-1" />
+                    <span className="hidden md:block"> Save</span>
+                  </Button>
+                </div>
               </div>
+
               <h1 className="text-3xl font-bold text-slate-800 mb-2">
                 Grand Crest Hotel
               </h1>
@@ -169,27 +190,10 @@ export default function HotelGallery() {
                 <span>45, Raul Road, Victoria Island, Lagos</span>
               </div>
             </div>
-
-            <div className="flex gap-4 justify-between items-center">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-[#076476] text-white hover:bg-teal-800"
-              >
-                <ShareIcon />
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-full border-[#076476] text-[16px] font-[700] text-[#076476] hover:bg-teal-50"
-              >
-                <Heart className="h-5 w-5 mr-1" />
-                Save
-              </Button>
-            </div>
           </div>
 
           {/* Image Gallery Grid */}
-          <div className="grid grid-cols-12 gap-2 mb-4">
+          <div className="md:grid hidden grid-cols-12 gap-2 mb-4">
             <div className="col-span-12 md:col-span-6 lg:col-span-9 row-span-2">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <img
@@ -262,6 +266,9 @@ export default function HotelGallery() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="block md:hidden">
+            <MobileImageCarousel images={hotelImages} />
           </div>
 
           {/* Action Buttons */}

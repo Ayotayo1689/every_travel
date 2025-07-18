@@ -63,10 +63,10 @@ export default function HotelCard({
           <img
             src={image || "/placeholder.svg"}
             alt=""
-            className="object-contain"
+            className=" h-full w-full object-cover"
           />
           {featured && (
-            <div className="absolute top-0 left-0 bg-[#FFC215] text-[#076476] px-6 py-2 rounded-br-xl text-sm font-[700]">
+            <div className="absolute top-0 left-0  bg-[#FFC215] text-[#076476] px-6 py-2 rounded-br-xl text-sm font-[700]">
               Featured
             </div>
           )}

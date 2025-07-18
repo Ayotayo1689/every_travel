@@ -574,7 +574,7 @@ export default function HotelDetails() {
     <div className=" mx-auto mt-8">
       {/* Navigation Links */}
       <div className="border-b mb-6">
-        <div className="flex overflow-x-auto">
+        <div className=" hidden md:flex overflow-x-auto">
           <button
             onClick={() => scrollToSection("description")}
             className={`py-3 px-4 whitespace-nowrap ${
@@ -730,7 +730,7 @@ export default function HotelDetails() {
         {/* Room listings */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-6">
-            <div className=" gap-6 mb-6">
+            <div className=" hidden md:block gap-6 mb-6">
               <div className="md:col-span-2 flex items-center space-x-4">
                 <div className="flex-1">
                   <div className="block text-sm text-gray-500 mb-1">
@@ -829,14 +829,14 @@ export default function HotelDetails() {
                 onClick={() => openRoomModal(room)}
               >
                 <div className="flex flex-col md:flex-row">
-                  <div className="relative  w-full md:w-1/3 h-50">
+                  <div className="relative w-full md:w-1/3 h-50">
                     <img
                       src={
                         room.image ||
                         "https://plus.unsplash.com/premium_photo-1746718185563-9d3782845c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       }
                       alt={room.name}
-                      className="object-cover h-full rounded-2xl"
+                      className="md:object-cover w-full h-full rounded-2xl"
                     />
                     {room.discount > 0 && (
                       <div className="absolute top-2 left-2 bg-[#076476] text-white text-xs font-bold px-2 py-1 rounded">
@@ -880,7 +880,7 @@ export default function HotelDetails() {
                         </div>
                       </div>
 
-                      <div className="  bg-gray-50 flex flex-col items-end justify-between">
+                      <div className="  flex flex-col items-end justify-between">
                         <i className="text-sm text-[#661C17] font-medium">
                           {room.roomsLeft} Rooms left
                         </i>
@@ -914,7 +914,7 @@ export default function HotelDetails() {
                               {formatCurrency(room.originalPrice)}
                             </div>
                           )}
-                          <div className="text-xl font-bold text-teal-700">
+                          <div className="text-xl font-bold md:text-teal-700">
                             {formatCurrency(room.price)}
                           </div>
                         </div>
