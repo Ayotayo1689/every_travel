@@ -62,7 +62,7 @@ export const useApiGet = (url: string, params = {}, skip = false) => {
   )
 
   const get = useCallback(
-    async (customUrl = url, customParams = params) => {
+    async () => {
       try {
         const result = await refetch()
         if (result.data?.message) {

@@ -4,9 +4,9 @@ import GuestDetailsForm from "@/components/GuestDetailsForm"
 import LoginPrompt from "@/components/LoginPrompt"
 import PaymentMethodSelector from "@/components/PaymentSelector"
 import type React from "react"
-import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+// import { useState } from "react"
+import {  useSelector } from "react-redux"
+// import { useNavigate } from "react-router-dom"
 // import { useAppSelector, useAppDispatch } from "../hooks/useAppSelector"
 // import { makePayment } from "../store/slices/bookingSlice"
 // import GuestDetailsForm from "../components/GuestDetailsForm"
@@ -19,9 +19,9 @@ import Container from "@/components/Container"
 const BookingForm = () => {
   const  {currentUser} = useSelector((state: any) => state.user)
   const { status, error } = useSelector((state: any) => state.booking)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [showLoginModal, setShowLoginModal] = useState(false)
+  // const dispatch = useDispatch()
+  // const navigate = useNavigate()
+  // const [showLoginModal, setShowLoginModal] = useState(false)
 
   console.log("isLoggedIn", currentUser);
   

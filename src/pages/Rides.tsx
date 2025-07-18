@@ -3,13 +3,8 @@ import {
   CalendarIcon,
   Clock,
   MapPin,
-  Shield,
-  Clock3,
-  Car,
-  DollarSign,
   ChevronDown,
   User,
-  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 // import { format } from "date-fns";
@@ -28,7 +23,6 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 
-import PlaneSvg from "../assets/planeillustration.svg";
 
 import CarBanner from "../assets/carHire.svg";
 import SafetyFirst from "../assets/SafetyFirst.svg";

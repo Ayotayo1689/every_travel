@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
 import { useSelector } from "react-redux";
 import Container from "@/components/Container";
 import { SuccessIcon } from "@/assets/icons/Icons";
 
 const PaymentSuccessful = () => {
-  const { currentUser } = useSelector((state: any) => state.user);
+  // const { currentUser } = useSelector((state: any) => state.user);
   const {
     bookingDetails,
     guestDetails,

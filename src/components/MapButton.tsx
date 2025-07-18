@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { MapIcon, MapPin } from "lucide-react"
+import {  MapPin } from "lucide-react"
 import IframeMap from "./IframeMap"
 
 interface MapButtonProps {

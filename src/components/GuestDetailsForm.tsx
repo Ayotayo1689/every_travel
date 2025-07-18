@@ -1,16 +1,19 @@
 "use client"
 
-import type React from "react"
+// import type React from "react"
 
 // import { useBooking } from "../context/BookingContext"
 
 const GuestDetailsForm = () => {
-//   const { guestDetails, updateGuestDetails } = useBooking()
+  // const { guestDetails, updateGuestDetails } = useBooking()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    // const { name, value } = e.target
-    // updateGuestDetails({ [name]: value } as any)
-  }
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  //   const { name, value } = e.target
+
+  //   console.log(guestDetails);
+    
+  //   updateGuestDetails({ [name]: value } as any)
+  // }
 
   return (
     <div className="space-y-6">
@@ -24,7 +27,7 @@ const GuestDetailsForm = () => {
                 type="text"
                 name="firstName"
                 // value={guestDetails.firstName}
-                onChange={handleChange}
+                // onChange={handleChange}
                 placeholder="First name *"
                 className="w-full border rounded-md p-3"
                 required
@@ -35,7 +38,7 @@ const GuestDetailsForm = () => {
                 type="text"
                 name="lastName"
                 // value={guestDetails.lastName}
-                onChange={handleChange}
+                // onChange={handleChange}
                 placeholder="Last name *"
                 className="w-full border rounded-md p-3"
                 required
@@ -54,7 +57,7 @@ const GuestDetailsForm = () => {
               type="email"
               name="email"
             //   value={guestDetails.email}
-              onChange={handleChange}
+              // onChange={handleChange}
               placeholder="Email address *"
               className="w-full border rounded-md p-3"
               required
@@ -65,7 +68,7 @@ const GuestDetailsForm = () => {
               <select
                 name="country"
                 // value={guestDetails.country}
-                onChange={handleChange}
+                // onChange={handleChange}
                 className="w-full border rounded-md p-3 appearance-none"
               >
                 <option value="+234">+234</option>
@@ -90,7 +93,7 @@ const GuestDetailsForm = () => {
                 type="tel"
                 name="phone"
                 // value={guestDetails.phone}
-                onChange={handleChange}
+                // onChange={handleChange}
                 placeholder="Phone number *"
                 className="w-full border rounded-md p-3"
                 required
@@ -108,7 +111,7 @@ const GuestDetailsForm = () => {
         <textarea
           name="specialRequests"
         //   value={guestDetails.specialRequests}
-          onChange={handleChange}
+          // onChange={handleChange}
           placeholder="Type your special requests..."
           className="w-full border rounded-md p-3 min-h-[100px]"
         ></textarea>

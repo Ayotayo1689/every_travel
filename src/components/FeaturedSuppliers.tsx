@@ -1,52 +1,52 @@
 import Suppliers from "../assets/Suppliers.svg";
 const FeaturedSuppliers = () => {
-  const suppliers = [
-    {
-      name: "Enterprise",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Enterprise logo",
-    },
-    {
-      name: "Hertz",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Hertz logo",
-    },
-    {
-      name: "Budget",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Budget logo",
-    },
-    {
-      name: "Thrifty",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Thrifty logo",
-    },
-    {
-      name: "Avis",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Avis logo",
-    },
-    {
-      name: "Alamo",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Alamo logo",
-    },
-    {
-      name: "National",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "National logo",
-    },
-    {
-      name: "Dollar",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Dollar logo",
-    },
-    {
-      name: "Sixt",
-      logo: "/placeholder.svg?height=50&width=150",
-      alt: "Sixt logo",
-    },
-  ];
+  // const suppliers = [
+  //   {
+  //     name: "Enterprise",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Enterprise logo",
+  //   },
+  //   {
+  //     name: "Hertz",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Hertz logo",
+  //   },
+  //   {
+  //     name: "Budget",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Budget logo",
+  //   },
+  //   {
+  //     name: "Thrifty",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Thrifty logo",
+  //   },
+  //   {
+  //     name: "Avis",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Avis logo",
+  //   },
+  //   {
+  //     name: "Alamo",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Alamo logo",
+  //   },
+  //   {
+  //     name: "National",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "National logo",
+  //   },
+  //   {
+  //     name: "Dollar",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Dollar logo",
+  //   },
+  //   {
+  //     name: "Sixt",
+  //     logo: "/placeholder.svg?height=50&width=150",
+  //     alt: "Sixt logo",
+  //   },
+  // ];
 
   return (
     <section data-aos="fade-left" className="md:py-6 bg-white">

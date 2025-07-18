@@ -3,13 +3,8 @@ import {
   CalendarIcon,
   Clock,
   MapPin,
-  Shield,
-  Clock3,
-  Car,
-  DollarSign,
   ChevronDown,
   User,
-  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 // import { format } from "date-fns";
@@ -28,18 +23,14 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 
-import PlaneSvg from "../assets/planeillustration.svg";
 
 import CarBanner from "../assets/carHire.svg";
 import SafetyFirst from "../assets/SafetyFirst.svg";
 import ReasonableRates from "../assets/ReasonableRates.svg";
 import OnTime from "../assets/onTime.svg";
 import FleetVariety from "../assets/FleetVariety.svg";
-import Howitworks from "../assets/Howitworks.svg";
-import HowitworksArrow from "../assets/HowitworkArror.svg";
 
 import Container from "@/components/Container";
-import FAQSection from "@/components/Faq";
 import FeaturedSuppliers from "@/components/FeaturedSuppliers";
 
 export default function CarHire() {

@@ -15,7 +15,7 @@ interface IframeMapProps {
         <iframe
           src={mapUrl}
           width={width}
-        //   height={height}
+          height={height}
           style={{ border: 0 }}
           allowFullScreen={false}
           loading="lazy"

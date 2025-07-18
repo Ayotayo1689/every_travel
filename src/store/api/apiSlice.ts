@@ -1,41 +1,41 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Token management functions
 const setTokens = (accessToken: string, refreshToken: string) => {
-  localStorage.setItem("accessToken", accessToken)
-  localStorage.setItem("refreshToken", refreshToken)
-}
+  localStorage.setItem("accessToken", accessToken);
+  localStorage.setItem("refreshToken", refreshToken);
+};
 
 const clearTokens = () => {
-  localStorage.removeItem("accessToken")
-  localStorage.removeItem("refreshToken")
-}
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("refreshToken");
+};
 
-const getAccessToken = () => localStorage.getItem("accessToken")
-const getRefreshToken = () => localStorage.getItem("refreshToken")
+const getAccessToken = () => localStorage.getItem("accessToken");
+const getRefreshToken = () => localStorage.getItem("refreshToken");
 
 // Base query with authentication
 const baseQuery = fetchBaseQuery({
   baseUrl: "https://api.yourtravelwebsite.com/",
-  prepareHeaders: (headers, { getState }) => {
-    const token = getAccessToken()
+  prepareHeaders: (headers) => {
+    const token = getAccessToken();
     if (token) {
-      headers.set("authorization", `Bearer ${token}`)
+      headers.set("authorization", `Bearer ${token}`);
     }
-    return headers
+    return headers;
   },
-})
+});
 
 // Base query with re-authentication logic
 const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
-  let result = await baseQuery(args, api, extraOptions)
+  let result = await baseQuery(args, api, extraOptions);
 
   if (result.error && result.error.status === 401) {
     // Try to get a new token
-    const refreshToken = getRefreshToken()
+    const refreshToken = getRefreshToken();
     if (!refreshToken) {
-      clearTokens()
-      return result
+      clearTokens();
+      return result;
     }
 
     const refreshResult = await baseQuery(
@@ -45,26 +45,27 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
         body: { refreshToken },
       },
       api,
-      extraOptions,
-    )
+      extraOptions
+    );
 
     if (refreshResult.data) {
       // Store the new token
-      const { accessToken, refreshToken: newRefreshToken } = refreshResult.data as {
-        accessToken: string
-        refreshToken: string
-      }
-      setTokens(accessToken, newRefreshToken)
+      const { accessToken, refreshToken: newRefreshToken } =
+        refreshResult.data as {
+          accessToken: string;
+          refreshToken: string;
+        };
+      setTokens(accessToken, newRefreshToken);
 
       // Retry the original query with new access token
-      result = await baseQuery(args, api, extraOptions)
+      result = await baseQuery(args, api, extraOptions);
     } else {
-      clearTokens()
+      clearTokens();
     }
   }
 
-  return result
-}
+  return result;
+};
 
 // Create the API slice
 export const api = createApi({
@@ -78,10 +79,10 @@ export const api = createApi({
       }),
       onQueryStarted: async (_, { queryFulfilled }) => {
         try {
-          const { data } = await queryFulfilled
-          setTokens(data.accessToken, data.refreshToken)
+          const { data } = await queryFulfilled;
+          setTokens(data.accessToken, data.refreshToken);
         } catch (err) {
-          console.error(err)
+          console.error(err);
         }
       },
     }),
@@ -92,10 +93,10 @@ export const api = createApi({
       }),
       onQueryStarted: async (_, { queryFulfilled }) => {
         try {
-          await queryFulfilled
-          clearTokens()
+          await queryFulfilled;
+          clearTokens();
         } catch (err) {
-          console.error(err)
+          console.error(err);
         }
       },
     }),
@@ -137,7 +138,7 @@ export const api = createApi({
       }),
     }),
   }),
-})
+});
 
 export const {
   useRegisterMutation,
@@ -148,4 +149,4 @@ export const {
   useGetProfileQuery,
   usePatchDataMutation,
   useDeleteDataMutation,
-} = api
+} = api;
