@@ -4,7 +4,7 @@ import BannerSearch from "./BannerSearch";
 export default function HotelBanner() {
   return (
     <div
-      data-aos="fade-right"
+    data-aos="fade-up" 
       className="relative min-h-[50dvh] w-full flex flex-col p-4 md:items-center justify-end pb-8"
     >
       <div

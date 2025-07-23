@@ -370,7 +370,7 @@ export default function CarHire() {
 
       {/* Booking card */}
       <Container>
-        <div data-aos="fade-right" className=" w-full pt-40  md:pt-40 mx-auto ">
+        <div data-aos="fade-up"  className=" w-full pt-40  md:pt-40 mx-auto ">
           <div
            
             className="custom-background md:mt-10 pb-32 md:pt-10   mb-4 flex md:flex-row flex-col justify-center items-center gap-14 md:gap-8 "

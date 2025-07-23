@@ -14,7 +14,7 @@ interface OfferProps {
 export const OfferCard = ({ offer }: { offer: OfferProps }) => {
   return (
     <div
-      data-aos="fade-left"
+    data-aos="fade-up" 
       className={`relative overflow-hidden rounded-2xl border   transition-all duration-300 group ${offer.color} h-[200px] md:h-[250px]`}
     >
       <div className="flex h-full relative">

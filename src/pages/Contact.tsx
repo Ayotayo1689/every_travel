@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div>
       <div
-        data-aos="fade-right"
+       data-aos="fade-up" 
         className="relative min-h-[50dvh] w-full flex flex-col md:items-center justify-center pb-8"
         style={{
           backgroundImage: `url('${ContactImg}')`,

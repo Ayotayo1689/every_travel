@@ -49,7 +49,7 @@ const FeaturedSuppliers = () => {
   // ];
 
   return (
-    <section data-aos="fade-left" className="md:py-6 bg-white">
+    <section data-aos="fade-up"  className="md:py-6 bg-white">
       <div className="container mx-auto md:px-4">
         <div className="text-center mb-12">
           <h2 className="text-[24px] text-center  md:text-[40px] font-[700] font-poppins text-[#032A32] mb-2">

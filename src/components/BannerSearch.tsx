@@ -44,7 +44,8 @@ const BannerSearch = () => {
 
   return (
     <div className="relative flex  mt-10 z-10 w-full md:max-w-6xl max-w-[90vw] p-4 rounded-3xl  bg-white/40 backdrop-blur-lg">
-      <div className="rounded-2xl bg-white flex-1 flex md:flex-row flex-col overflow-clip">
+     <div className="p-2 bg-white rounded-3xl flex-1">
+     <div className="rounded-2xl bg-white flex-1 flex md:flex-row flex-col overflow-clip">
         <div className="bg-white overflow-clip flex-1 flex flex-col md:flex-row gap-4 md:gap-2 items-stretch md:items-center   p-4">
           {/* Location Input */}
           <div className="flex mb-4 md:mb-0 flex-col space-y-1 bg-white rounded-md w-full">
@@ -226,6 +227,7 @@ const BannerSearch = () => {
           Search
         </button>
       </div>
+     </div>
     </div>
   );
 };

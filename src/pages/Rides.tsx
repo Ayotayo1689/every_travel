@@ -372,7 +372,7 @@ export default function TransportationBooking() {
      
            {/* Booking card */}
            <Container>
-             <div data-aos="fade-right" className=" w-full pt-40  md:pt-40 mx-auto ">
+             <div data-aos="fade-up"  className=" w-full pt-40  md:pt-40 mx-auto ">
                <div
                 
                  className="custom-background md:mt-10 md:pb-32 md:pt-10   mb-4 flex md:flex-row flex-col justify-center items-center gap-14 md:gap-8 "
@@ -419,7 +419,7 @@ export default function TransportationBooking() {
                </div>
              </div>
            </Container>
-      <div  data-aos="fade-left" className=" bg-[#E6F0F1]">
+      <div  data-aos="fade-up"  className=" bg-[#E6F0F1]">
         <Container Bg>
           <div className="w-full">
             <div className="container mx-auto md:py-4 ">

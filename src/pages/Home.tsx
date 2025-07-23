@@ -113,11 +113,11 @@ const Home = () => {
         </Container>
         <Container>
           <div
-            data-aos="fade-right"
+            data-aos="fade-up" 
             className="flex flex-col md:flex-row  w-full gap-4"
           >
             {destinations.map((destination, index) => (
-              <div key={index} className="flex-1 h-[400px] ">
+              <div key={index} className="flex-1 md:h-[400px] ">
                 <div className="flex h-[100%] items-center justify-center flex-col">
                   {index === 0 && (
                     <div className=" mb-6 w-full  ">
@@ -137,8 +137,8 @@ const Home = () => {
                     </div>
                   )}
 
-                  <div className=" flex-1 min-h-[50%] w-full  ">
-                    <div className="relative h-[100%]   overflow-hidden rounded-xl group cursor-pointer">
+                  <div className=" md:flex-1 h-fit md:min-h-[50%] w-full  ">
+                    <div className="relative md:h-[100%]   md:overflow-hidden overflow-clip rounded-xl group cursor-pointer">
                       <div className="relative  w-full h-[250px] md:h-[100%]  ">
                         <img
                           src={destination.image || "/placeholder.svg"}
@@ -186,8 +186,11 @@ const Home = () => {
           <HotelDealsCarousel />
         </Container>
 
-       <Container  >
-          <div data-aos="flip-left" className="w-full hidden md:block  mx-auto px-4 py-8">
+        <Container>
+          <div
+            data-aos="flip-left"
+            className="w-full hidden md:block  mx-auto px-4 py-8"
+          >
             <div className="mb-6">
               <h2 className="text-[40px] font-poppins font-[700] text-[#032A32] mb-2">
                 Recommended Hotels for You
@@ -198,16 +201,19 @@ const Home = () => {
                 stay.{" "}
               </p>
             </div>
-            <div className="flex  gap-4  ">
+            <div className="flex  flex-wrap gap-4  ">
               {hotels.map((hotel, index) => (
-                <div key={`${hotel.id}-${index}`}>
+                <div
+                  className=" flex-1"
+                  key={`${hotel.id}-${index}`}
+                >
                   <HotelCard {...hotel} />
                 </div>
               ))}
             </div>
           </div>
         </Container>
-         <Container>
+        <Container>
           <div
             style={{
               backgroundImage: `url("${GlobeIll}")`,
@@ -215,7 +221,7 @@ const Home = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            data-aos="fade-right"
+            data-aos="fade-up" 
             className=" w-full p-2   "
           >
             <h1 className="font-poppins text-center text-[#032A32] md:text-[40px] text-[24px] font-[700] mb-6">
@@ -224,7 +230,7 @@ const Home = () => {
             <div className="flex gap-6  flex-col md:flex-row justify-between min-h-[80dvh]  w-full">
               <div className="flex-1 md:max-w-[320px]  items-center gap-6 justify-center flex flex-col">
                 <div className="w-full border p-4 rounded-2xl aspect-video bg-[#fafeff] ">
-                  <img src={AllInOneSvg} alt=""  />
+                  <img src={AllInOneSvg} alt="" />
                   <p className="text-[20px] font-[700] text-[#032A32] mt-4">
                     All in One{" "}
                   </p>

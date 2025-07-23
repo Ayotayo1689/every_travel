@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { ArrowBackIcon } from "@/assets/icons/Icons";
+import { ArrowBackIcon, CameraPlusIcon } from "@/assets/icons/Icons";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
@@ -10,6 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Profile() {
   const [edit, setEdit] = useState<any>(null);
@@ -21,6 +22,17 @@ export default function Profile() {
 
   return (
     <div className="space-y-6">
+
+      <div className=" flex gap-4 p-4 rounded-xl bg-white ">
+      <Avatar className="w-14 cursor-pointer h-14">
+          <AvatarImage src="/placeholder.svg" />
+          <AvatarFallback className="bg-[#EFF0F0] text-white text-lg"><CameraPlusIcon/></AvatarFallback>
+        </Avatar>
+        <div className="text-[#1D1F1F]">
+          <h3 className="font-bold text-xl">Jane Doe</h3>
+          <p className=" text-base">janedoe@gmail.com</p>
+        </div>
+      </div>
       <div className="grid grid-cols-1 gap-6">
         {edit === null ? (
           <>

@@ -261,7 +261,7 @@ const Hotel = () => {
 
         <Container>
           <div
-            data-aos="fade-right"
+            data-aos="fade-up" 
             className="w-full  mx-auto md:px-4 md:py-8"
           >
             <div className="flex items-center justify-between mb-6">
@@ -289,7 +289,7 @@ const Hotel = () => {
           </div>
         </Container>
         <Container>
-          <div data-aos="fade-left" className="  w-full flex gap-6">
+          <div data-aos="fade-up"  className="  w-full flex gap-6">
             <div className="flex-1 rounded-2xl md:rounded-none md:rounded-l-3xl p-6 bg-[#E6F0F1]    ">
               <TypingText words={["List Your Property"]} speed />
               <div className="font-poppins mt-4 font-[700] text-[24px] md:text-[40px]">

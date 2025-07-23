@@ -58,7 +58,7 @@ export default function TravelBooking() {
  
   return (
     <div
-      data-aos="fade-right"
+    data-aos="fade-up" 
       className="relative py-[100px] min-h-[80dvh] w-full flex flex-col items-center justify-center"
     >
       {/* Background Image */}

@@ -15,13 +15,13 @@ const Article = ({
 }: ArticleProps) => {
   return (
     <div className="group  md:h-[170px] w-full   duration-300">
-      <div className="flex h-full w-full">
+      <div className="flex  md:h-full w-full">
         {/* Image section - left side */}
-        <div className=" w-[40%]   md:w-[30%]  rounded-2xl relative overflow-clip">
+        <div className=" w-[40%] h-[130px] md:h-full md:w-[30%]  rounded-2xl relative overflow-clip">
           <img
             src={image || "/placeholder.svg"}
             alt={title}
-            className=" aspect-video h-full transition-transform duration-500 group-hover:scale-110"
+            className=" md:aspect-video  object-center  md:h-full transition-transform duration-500 group-hover:scale-110"
           />
         </div>
 

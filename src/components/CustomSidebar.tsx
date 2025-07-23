@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DashBoardLogoIcon } from "@/assets/icons/Icons";
 
 const menuItems = [
   {
@@ -70,14 +71,8 @@ export default function CustomSidebar() {
   return (
     <aside className="w-72 bg-[#032A32] text-white rounded-xl py-6 px-4 sticky top-[80px] h-fit">
       <div className="flex flex-col items-center space-y-4 border-b pb-8 border-[#3c5a51] mb-6">
-        <Avatar className="w-16 h-16">
-          <AvatarImage src="/placeholder.svg" />
-          <AvatarFallback className="bg-slate-600 text-white text-lg">JD</AvatarFallback>
-        </Avatar>
-        <div className="text-center">
-          <h3 className="font-semibold text-lg">Jane Doe</h3>
-          <p className="text-slate-300 text-sm">janedoe@gmail.com</p>
-        </div>
+        <DashBoardLogoIcon/>
+        
       </div>
 
       <nav className="space-y-2">
