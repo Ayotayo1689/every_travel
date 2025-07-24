@@ -14,7 +14,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DashBoardLogoIcon } from "@/assets/icons/Icons";
 
 const menuItems = [
