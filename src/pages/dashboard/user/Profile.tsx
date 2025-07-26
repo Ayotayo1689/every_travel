@@ -22,11 +22,12 @@ export default function Profile() {
 
   return (
     <div className="space-y-6">
-
       <div className=" flex gap-4 p-4 rounded-xl bg-white ">
-      <Avatar className="w-14 cursor-pointer h-14">
+        <Avatar className="w-14 cursor-pointer h-14">
           <AvatarImage src="/placeholder.svg" />
-          <AvatarFallback className="bg-[#EFF0F0] text-white text-lg"><CameraPlusIcon/></AvatarFallback>
+          <AvatarFallback className="bg-[#EFF0F0] text-white text-lg">
+            <CameraPlusIcon />
+          </AvatarFallback>
         </Avatar>
         <div className="text-[#1D1F1F]">
           <h3 className="font-bold text-xl">Jane Doe</h3>
@@ -147,9 +148,24 @@ export default function Profile() {
                         label="First name"
                         variant="filled"
                         defaultValue={"Jane"}
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
@@ -159,9 +175,24 @@ export default function Profile() {
                         label="Last name"
                         variant="filled"
                         defaultValue={"Doe"}
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
@@ -172,9 +203,24 @@ export default function Profile() {
                         variant="filled"
                         placeholder="MM/DD/YYYY"
                         type="date"
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
@@ -231,17 +277,52 @@ export default function Profile() {
                         type="email"
                         variant="filled"
                         defaultValue="janedoe@gmail.com"
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
                     <div className="flex mb-6 gap-2">
                       <div className="w-1/3 ">
-                       
-
-                        <FormControl variant="filled" sx={{ minWidth: "100%" }}>
+                        <FormControl
+                          variant="filled"
+                          sx={{
+                            minWidth: "100%",
+                            backgroundColor: "white",
+                            border: "1px solid #032A3280",
+                            borderRadius: "6px",
+                            overflow:"clip",
+                            "& .MuiFilledInput-root": {
+                              backgroundColor: "white",
+                              disableUnderline: true,
+                              "&:hover": {
+                                backgroundColor: "white", // No change on hover
+                              },
+                              "&::before, &::after": {
+                                borderBottom: "none !important", // Remove bottom border
+                              },
+                            },
+                            "& label.Mui-focused": {
+                              color: "#1D1F1F", // Focused label color
+                            },
+                          }}
+                        >
                           <InputLabel id="demo-simple-select-filled-label">
                             Age
                           </InputLabel>
@@ -250,6 +331,7 @@ export default function Profile() {
                             id="demo-simple-select-filled"
                             value={age}
                             onChange={handleChange}
+                            disableUnderline
                           >
                             <MenuItem value="">
                               <em>None</em>
@@ -266,9 +348,24 @@ export default function Profile() {
                           label="Phone number"
                           variant="filled"
                           defaultValue="+234 8012345678"
+                          InputProps={{
+                            disableUnderline: true,
+                          }}
                           sx={{
                             width: "100%",
                             backgroundColor: "white",
+                            border: "0.5px solid #032A3280",
+                            borderRadius: "6px",
+                            overflow: "clip",
+                            "& .MuiFilledInput-root": {
+                              backgroundColor: "white",
+                              "&:hover": {
+                                backgroundColor: "white", // no change on hover
+                              },
+                            },
+                            "& label.Mui-focused": {
+                              color: "#5D6465", // label color when focused
+                            },
                           }}
                         />
                       </div>
@@ -279,9 +376,24 @@ export default function Profile() {
                         label="Country"
                         variant="filled"
                         defaultValue={"Nigeria"}
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
@@ -290,9 +402,24 @@ export default function Profile() {
                         id="filled-basic"
                         label="Street name and house number"
                         variant="filled"
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
@@ -302,9 +429,24 @@ export default function Profile() {
                           id="filled-basic"
                           label="City"
                           variant="filled"
+                          InputProps={{
+                            disableUnderline: true,
+                          }}
                           sx={{
                             width: "100%",
                             backgroundColor: "white",
+                            border: "0.5px solid #032A3280",
+                            borderRadius: "6px",
+                            overflow: "clip",
+                            "& .MuiFilledInput-root": {
+                              backgroundColor: "white",
+                              "&:hover": {
+                                backgroundColor: "white", // no change on hover
+                              },
+                            },
+                            "& label.Mui-focused": {
+                              color: "#5D6465", // label color when focused
+                            },
                           }}
                         />
                       </div>
@@ -313,9 +455,24 @@ export default function Profile() {
                           id="filled-basic"
                           label="State"
                           variant="filled"
+                          InputProps={{
+                            disableUnderline: true,
+                          }}
                           sx={{
                             width: "100%",
                             backgroundColor: "white",
+                            border: "0.5px solid #032A3280",
+                            borderRadius: "6px",
+                            overflow: "clip",
+                            "& .MuiFilledInput-root": {
+                              backgroundColor: "white",
+                              "&:hover": {
+                                backgroundColor: "white", // no change on hover
+                              },
+                            },
+                            "& label.Mui-focused": {
+                              color: "#5D6465", // label color when focused
+                            },
                           }}
                         />
                       </div>
@@ -325,9 +482,24 @@ export default function Profile() {
                         id="filled-basic"
                         label="Zip code"
                         variant="filled"
+                        InputProps={{
+                          disableUnderline: true,
+                        }}
                         sx={{
                           width: "100%",
                           backgroundColor: "white",
+                          border: "0.5px solid #032A3280",
+                          borderRadius: "6px",
+                          overflow: "clip",
+                          "& .MuiFilledInput-root": {
+                            backgroundColor: "white",
+                            "&:hover": {
+                              backgroundColor: "white", // no change on hover
+                            },
+                          },
+                          "& label.Mui-focused": {
+                            color: "#5D6465", // label color when focused
+                          },
                         }}
                       />
                     </div>
