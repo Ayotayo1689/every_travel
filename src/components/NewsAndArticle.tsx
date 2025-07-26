@@ -6,7 +6,7 @@ const NewsAndArticle = () => {
       <h1 data-aos="fade-down" className="text-center font-poppins font-[700] md:text-[40px] text-[24px] mb-6 text-[#032A32] ">
         Latest News & Articles
       </h1>
-      <div data-aos="flip-down" className="flex  flex-col md:flex-row gap-4 md:gap-10">
+      <div data-aos="fade-up" className="flex  flex-col md:flex-row gap-4 md:gap-10">
         <div className="flex-1 inset-0  md:min-h-[500px]">
           <div className=" flex-1 min-h-[60%] w-full  ">
             <div className="relative h-[100%]   overflow-hidden rounded-xl group cursor-pointer">
